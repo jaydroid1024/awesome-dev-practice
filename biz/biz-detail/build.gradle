@@ -1,0 +1,16 @@
+apply from: "../../buildgradle/biz.gradle"
+
+
+dependencies {
+
+    /**
+     * 单项目公共业务组件
+     */
+    implementation project(path: ':base:base-dev')
+
+    implementation rootProject.ext.recyclerAdapterHelper
+    implementation rootProject.ext.wechat
+
+
+}
+
