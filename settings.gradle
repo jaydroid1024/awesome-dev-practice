@@ -3,14 +3,20 @@ rootProject.name = 'awesome-dev-practice'
  * 有关组件化的一些信息请参考此项目：[WanDroid组件化](https://github.com/Jay-Droid/WanDroid)
  */
 include ':app:dev',
-        ':app:app-detail'
+        ':app:app-detail',
+        ':app:app-android',
+        ':app:app-java',
+        ':app:app-kotlin'
 
-
-include':biz:biz-detail'
+include ':biz:biz-detail',
+        ':biz:biz-java',
+        ':biz:biz-android',
+        ':biz:biz-kotlin'
 
 include ':base:base-common',
         ':base:base-dev'
 
-
 include ':lib:lib-common',
-        ':lib:lib-net'
+        ':lib:lib-net',
+        ':lib:lib-java',
+        ':lib:lib-kotlin'

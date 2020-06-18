@@ -1,0 +1,11 @@
+apply from: "../../buildgradle/biz.gradle"
+
+
+dependencies {
+
+    implementation project(path: ':lib:lib-java')
+    implementation project(path: ':base:base-dev')
+
+    implementation rootProject.ext.recyclerAdapterHelper
+
+}
