@@ -1,14 +1,14 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="base_component_app_theme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="base_common_app_theme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/base_component_colorPrimary</item>
         <item name="colorPrimaryDark">@color/base_component_colorPrimaryDark</item>
         <item name="colorAccent">@color/base_component_colorAccent</item>
     </style>
 
-    <style name="base_component_full_screen_style" parent="base_component_app_theme">
+    <style name="base_common_full_screen_style" parent="base_common_app_theme">
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>

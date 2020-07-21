@@ -77,11 +77,17 @@ class WebDialogFragment : DialogFragment() {
         val recyclerView: RecyclerView = rootView.findViewById(R.id.rv_web_opt)
         recyclerView.layoutManager = GridLayoutManager(mContext, 4)
         val adapter = WebOptAdapter(R.layout.biz_detail_item_web_opt, dataList)
-        adapter.onItemClickListener = object : BaseQuickAdapter.OnItemClickListener {
-            override fun onItemClick(adapter: BaseQuickAdapter<*, *>?, view: View?, position: Int) {
-                dismissAllowingStateLoss()
-                listener?.onItemClick(position)
-            }
+        adapter.setOnItemChildClickListener { adapter, view, position ->
+
+            /**
+             * callback method to be invoked when an item child in this view has been click
+             *
+             * @param adapter  BaseQuickAdapter
+             * @param view     The view whihin the ItemView that was clicked
+             * @param position The position of the view int the adapter
+             */
+            dismissAllowingStateLoss()
+            listener?.onItemClick(position)
         }
         recyclerView.adapter = adapter
 

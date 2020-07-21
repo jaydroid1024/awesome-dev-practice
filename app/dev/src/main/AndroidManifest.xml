@@ -4,13 +4,12 @@
     package="com.jay.dev">
 
     <application
-        android:label="@string/base_component_wan_app_name"
+        android:label="@string/base_dev_app_name"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
-
         tools:replace="android:label,android:icon,android:roundIcon">
 
-        <activity android:name="com.jay.dev.WanActivity">
+        <activity android:name="com.jay.dev.DevActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

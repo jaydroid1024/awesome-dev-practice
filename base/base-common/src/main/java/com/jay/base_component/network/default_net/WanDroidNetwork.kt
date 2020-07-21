@@ -4,6 +4,7 @@ import android.content.Context
 import com.jay.base_component.BuildConfig
 import com.jay.base_component.app.BaseComponentApp
 import com.jay.base_component.arouter.ARHelper
+import com.jay.base_component.arouter.ARPath
 import com.jay.base_component.arouter.service.user.UserService
 import com.jay.base_component.network.auth.AuthAbstractNetwork
 import com.jay.base_component.network.bean.wan.Banner
@@ -31,7 +32,7 @@ class WanDroidNetwork(context: Context) : AuthAbstractNetwork<WanDroidApiService
 
     init {
         userService =
-            ARHelper.getService<UserService>(ARHelper.PathUser.USER_SERVICE_PATH)
+            ARHelper.getService<UserService>(ARPath.PathUser.USER_SERVICE_PATH)
     }
 
     override val baseUrl: String

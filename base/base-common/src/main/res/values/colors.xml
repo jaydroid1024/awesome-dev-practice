@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
-    <color name="base_component_colorPrimary">#ffffffff</color>
-    <color name="base_component_colorPrimaryDark">#ffffffff</color>
-    <color name="base_component_colorAccent">#D81B60</color>
+    <color name="base_component_colorPrimary">@color/black_50</color>
+    <color name="base_component_colorPrimaryDark">@color/black</color>
+    <color name="base_component_colorAccent">@color/white_50</color>
+    <color name="ic_launcher_background">#f0f0f0</color>
 
     <color name="transparent">#00000000</color><!--透明色 -->
     <color name="white">#FFFFFF</color><!--白色 -->
+    <color name="white_50">#80FFFFFF</color><!--白色 -->
     <color name="ivory">#FFFFF0</color><!--象牙色 -->
     <color name="lightyellow">#FFFFE0</color><!--亮黄色 -->
     <color name="yellow">#FFFF00</color><!--黄色 -->

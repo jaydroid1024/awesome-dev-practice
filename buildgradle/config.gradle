@@ -145,7 +145,8 @@ ext {
             // kotlin扩展（可选） https://github.com/gyf-dev/ImmersionBar
             immersionbarKtx = "com.gyf.immersionbar:immersionbar-ktx:$immersionbarVersion",
             //
-            recyclerAdapterHelper = "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.45-androidx",
+            recyclerAdapterHelper = "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",
+
             //
             smartRefreshLayout = "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0",
             //
@@ -172,7 +173,7 @@ ext {
             //maven components
             base_lib = 'com.jaydroid.base_lib:base_lib:1.0.0',
             base_component = 'com.jaydroid.base_component:base_component:2.0.0',
-            base_component_wan = 'com.jaydroid.base_component_wan:base_component_wan:2.0.0',
+            base_component_wan = 'com.jaydroid.base_dev:base_dev:2.0.0',
             main = "com.jaydroid.main:main:1.0.0",
             login = "com.jaydroid.login:login:1.0.0",
 
@@ -182,13 +183,11 @@ ext {
     /* ========================================================= */
     /* ==========================签名信息======================== */
     /* ========================================================= */
-    println("/* ========================签名信息======================= */")
+//    println("/* ========================签名信息======================= */")
 
     def rootDir = rootDir.path
-    println("rootDir:$rootDir")
     //签名信息
     def keyProps = getKeyProperties()
-    println("keyProps" + keyProps.toString())
     sign = [
             //debug sign
             aliasDebug    : keyProps["aliasDebug"],
@@ -205,12 +204,12 @@ ext {
     /* ========================================================= */
     /* ========================环境变量信息======================= */
     /* ========================================================= */
-    println("/* ========================环境变量信息======================= */")
+//    println("/* ========================环境变量信息======================= */")
     def debugEnvironmentProps = getEnvironmentProperties(getEnvironmentPropertyType())
     def liveEnvironmentProps = getEnvironmentProperties("live")
-    println("debugEnvironmentProps:$debugEnvironmentProps")
-    println("liveEnvironmentProps:$liveEnvironmentProps")
-    println("propertyType:${getEnvironmentPropertyType()}")
+//    println("debugEnvironmentProps:$debugEnvironmentProps")
+//    println("liveEnvironmentProps:$liveEnvironmentProps")
+//    println("propertyType:${getEnvironmentPropertyType()}")
     environment = [
             // 测试环境 Properties dev local
             debugEnvironmentProps: debugEnvironmentProps,
@@ -221,22 +220,22 @@ ext {
     /* ========================================================= */
     /* ======================组件Maven仓库信息==================== */
     /* ========================================================= */
-    println("\n/* ========================组件Maven仓库信息======================= */")
-    //组件Maven仓库信息
-    def mavenProps = getMavenProperties()
-    println("mavenProps" + mavenProps.toString())
-    mavenRepo = [
-            //MavenProperties
-            mavenProps    : mavenProps,
-            //local
-            repoPathLocal : mavenProps["repoPathLocal"],
-            //remote
-            repoPathRemote: mavenProps["repoPathRemote"],
-            //userName
-            userName      : mavenProps["userName"],
-            //password
-            password      : mavenProps["password"]
-    ]
+//    println("\n/* ========================组件Maven仓库信息======================= */")
+//    //组件Maven仓库信息
+//    def mavenProps = getMavenProperties()
+//    println("mavenProps" + mavenProps.toString())
+//    mavenRepo = [
+//            //MavenProperties
+//            mavenProps    : mavenProps,
+//            //local
+//            repoPathLocal : mavenProps["repoPathLocal"],
+//            //remote
+//            repoPathRemote: mavenProps["repoPathRemote"],
+//            //userName
+//            userName      : mavenProps["userName"],
+//            //password
+//            password      : mavenProps["password"]
+//    ]
 
 
 }

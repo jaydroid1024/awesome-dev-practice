@@ -2,7 +2,9 @@
     package="com.jay.detail">
 
     <application>
-        <activity android:name="com.jay.detail.web.WebViewActivity" />
-
+        <activity
+            android:name="com.jay.detail.web.WebViewActivity"
+            android:theme="@style/base_common_full_screen_style" />
     </application>
+
 </manifest>

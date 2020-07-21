@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.jay.base_component.arouter.ARHelper
+import com.jay.base_component.arouter.ARPath
 import com.jay.base_component.base.mvp.BaseMVPActivity
 import com.jay.base_component.constant.Constants
 import com.jay.base_component.network.bean.wan.detail.AddFavoriteResponse
@@ -28,7 +29,7 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory
 import java.util.*
 import kotlin.collections.ArrayList
 
-@Route(path = ARHelper.PathDetail.DETAIL_ACTIVITY_PATH)
+@Route(path = ARPath.PathDetail.DETAIL_ACTIVITY_PATH)
 class WebViewActivity : BaseMVPActivity<WebContract.View, WebPresenter>(), WebContract.View {
 
     private lateinit var toolbar: Toolbar

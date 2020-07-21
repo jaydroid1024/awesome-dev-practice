@@ -1,4 +1,4 @@
-package com.jay.base_component_wan.application
+package com.jay.base_dev.application
 
 import android.app.Application
 import android.content.Context

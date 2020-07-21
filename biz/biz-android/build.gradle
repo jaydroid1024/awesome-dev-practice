@@ -1,14 +1,8 @@
 apply from: "../../buildgradle/biz.gradle"
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 
 dependencies {
 
     implementation project(path: ':base:base-dev')
-
     implementation rootProject.ext.recyclerAdapterHelper
-
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

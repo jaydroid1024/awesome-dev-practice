@@ -1,9 +1,7 @@
-apply plugin: 'java-library'
+apply from: "../../buildgradle/java.gradle"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation rootProject.ext.kotlinStdlibJdk8
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"

@@ -1,4 +1,4 @@
-package com.jay.base_component_wan
+package com.jay.base_dev
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
