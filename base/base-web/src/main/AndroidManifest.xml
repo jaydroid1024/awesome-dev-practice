@@ -1,0 +1,36 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qlife.base_web">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application>
+        <!--appLife ,name需要是全类名,value为固定值用于筛选 -->
+        <meta-data
+            android:name="com.qlife.base_web.app.BaseWebApp"
+            android:value="IModuleConfig" />
+
+        <activity
+            android:name=".web.WebActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".web.TestActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".fileview.PdfOnlineViewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".fileview.TestActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

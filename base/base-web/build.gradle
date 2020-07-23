@@ -1,0 +1,12 @@
+apply from: "../../buildgradle/biz.gradle"
+
+dependencies {
+
+    //rxpermissions
+    implementation rootProject.ext.rxpermissions
+    // 腾讯X5内核 webview
+    api rootProject.ext.tbssdk
+
+}
+
+

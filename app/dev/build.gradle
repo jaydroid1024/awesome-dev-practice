@@ -89,6 +89,8 @@ dependencies {
 
     implementation project(path: ':base:base-dev')
 
+    implementation project(path: ':base:base-web')
+
     implementation rootProject.ext.appcompat
     implementation rootProject.ext.recyclerAdapterHelper
     implementation rootProject.ext.coreKtx
@@ -97,6 +99,8 @@ dependencies {
     androidTestImplementation rootProject.ext.espressoCore
     //需要所有使用 ARouter 的组件都添加依赖
     kapt rootProject.ext.arouterCompiler
+
+
 
 
 

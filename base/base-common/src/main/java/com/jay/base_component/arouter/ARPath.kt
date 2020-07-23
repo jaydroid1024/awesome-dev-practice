@@ -57,6 +57,40 @@ object ARPath {
     }
 
     /**
+     * Web 组件
+     */
+    object PathWeb {
+
+        /**
+         * group name
+         */
+        private const val GROUP = "/base_web"
+
+        /**
+         * 通用Web页面
+         */
+        const val WEB_ACTIVITY_PATH = "$GROUP/web/activity"
+
+        /**
+         * 通用Web 测试页面
+         */
+        const val WEB_TEST_ACTIVITY_PATH = "$GROUP/web/test/activity"
+
+        /**
+         * 通用office 文件查看
+         */
+        const val FILE_VIEW_ACTIVITY_PATH = "${GROUP}/file/activity"
+
+        /**
+         * 通用office 文件查看
+         */
+        const val FILE_VIEW_TEST_ACTIVITY_PATH = "${GROUP}/file/test/activity"
+
+
+    }
+
+
+    /**
      * user组件
      */
     object PathUser {

@@ -60,5 +60,15 @@ object Constants {
          */
         const val MAP_PARAMS = "map_params"
 
+        /**
+         * 用Json字符串存放的key
+         */
+        const val JSON_PARAMS = "json_params"
+
+        /**
+         * 用List存放的key
+         */
+        const val LIST_PARAMS = "list_params"
+
     }
 }

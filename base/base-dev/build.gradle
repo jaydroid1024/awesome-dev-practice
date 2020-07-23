@@ -75,9 +75,6 @@ dependencies {
      */
     api project(path: ':base:base-common')
 
-    testImplementation rootProject.ext.junit
-    androidTestImplementation rootProject.ext.junitX
-    androidTestImplementation rootProject.ext.espressoCore
 }
 
 

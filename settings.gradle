@@ -14,6 +14,7 @@ include ':biz:biz-detail',
         ':biz:biz-kotlin'
 
 include ':base:base-common',
+        ':base:base-web',
         ':base:base-dev'
 
 include ':lib:lib-common',

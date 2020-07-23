@@ -53,6 +53,8 @@ class DevActivity : AppCompatActivity(), OnItemClickListener {
     private val homeItemData: ArrayList<HomeEntity>
         get() = arrayListOf(
             HomeEntity(headerTitle = "基本技能-计算机系统&网络知识体系"),
+            HomeEntity("WEB", ARPath.PathWeb.WEB_TEST_ACTIVITY_PATH, R.mipmap.ic_bald),
+            HomeEntity("FILE", ARPath.PathWeb.FILE_VIEW_TEST_ACTIVITY_PATH, R.mipmap.ic_bald),
             HomeEntity("计算机", ARPath.PathDetail.DETAIL_ACTIVITY_PATH, R.mipmap.ic_bald),
             HomeEntity("操作系统", ARPath.PathDev.DEV_ACTIVITY_PATH, R.mipmap.ic_bald),
             HomeEntity("网络", ARPath.PathDev.DEV_ACTIVITY_PATH, R.mipmap.ic_bald),

@@ -62,8 +62,7 @@ android {
 }
 
 dependencies {
-    //基础功能组件
-    api project(path: ':lib:lib-common')
+
 
     api fileTree(include: ['*.jar'], dir: 'libs')
     api rootProject.ext.kotlinStdlibJdk8
@@ -74,6 +73,9 @@ dependencies {
     androidTestImplementation rootProject.ext.junitX
     androidTestImplementation rootProject.ext.espressoCore
 
+    //基础功能组件
+    api project(path: ':lib:lib-common')
+    
     //persistentcookiejar
     api rootProject.ext.persistentcookiejar
     //statusbarUtil

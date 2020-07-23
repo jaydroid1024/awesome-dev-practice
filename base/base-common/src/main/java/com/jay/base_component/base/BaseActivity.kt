@@ -14,9 +14,11 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected lateinit var mContext: Context
 
-    final override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(getLayoutResId())
+        if (getLayoutResId() != 0) {
+            setContentView(getLayoutResId())
+        }
         mContext = this
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR//黑色
@@ -33,7 +35,9 @@ abstract class BaseActivity : AppCompatActivity() {
     open fun initData() {
     }
 
-    abstract fun initView()
+    open fun initView() {
+
+    }
 
     abstract fun getLayoutResId(): Int
 

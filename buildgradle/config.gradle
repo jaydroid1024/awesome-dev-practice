@@ -154,6 +154,11 @@ ext {
             //
             lottie = "com.airbnb.android:lottie:2.7.0",
 
+            //easypermissions
+            easypermissions = "pub.devrel:easypermissions:1.1.1",
+            //rxpermissions
+            rxpermissions = "com.github.tbruyelle:rxpermissions:0.10.2",
+
 
             /** ========================================================= */
             /** ========================== 三方SDK ======================= */
@@ -163,9 +168,10 @@ ext {
             tinkerLoader = "com.tencent.tinker:tinker-android-loader:$tinkerVersion",
             //tinker热修复：可选，用于生成application类
             tinkerAnno = "com.tencent.tinker:tinker-android-anno:$tinkerVersion",
-            //
+            //微信
             wechat = "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+",
-
+            //腾讯x5内核
+            tbssdk = 'com.tencent.tbs.tbssdk:sdk:43903',
 
             /** ========================================================= */
             /** ======================== components ===================== */
