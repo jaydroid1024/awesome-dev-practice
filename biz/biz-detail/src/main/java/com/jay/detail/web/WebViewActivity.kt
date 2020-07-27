@@ -11,14 +11,13 @@ import android.webkit.WebView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.jay.base_component.arouter.ARHelper
 import com.jay.base_component.arouter.ARPath
 import com.jay.base_component.base.mvp.BaseMVPActivity
 import com.jay.base_component.constant.Constants
 import com.jay.base_component.network.bean.wan.detail.AddFavoriteResponse
 import com.jay.base_component.network.bean.wan.detail.WebOptBean
 import com.jay.base_component.utils.dp2px
-import com.jay.base_component.widget.XWebView
+import com.jay.base_component.widget.webview.XWebView
 import com.jay.base_lib.utils.ToastUtils
 import com.jay.detail.R
 import com.jay.detail.web.contract.WebContract

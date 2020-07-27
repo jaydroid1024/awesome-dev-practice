@@ -190,5 +190,23 @@ object ARPath {
 
     }
 
+    /**
+     * group 组件
+     */
+    object PathEnglish {
+
+        /**
+         * group name
+         */
+        private const val GROUP = "/english"
+
+        /**
+         * 英语页面主组件
+         */
+        const val ENGLISH_ACTIVITY_PATH = "$GROUP/en/main/activity"
+
+
+    }
+
 
 }

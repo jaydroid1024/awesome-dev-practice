@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.qlife.base_web">
+    package="com.jay.base_web">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -14,23 +14,23 @@
     <application>
         <!--appLife ,name需要是全类名,value为固定值用于筛选 -->
         <meta-data
-            android:name="com.qlife.base_web.app.BaseWebApp"
+            android:name="com.jay.base_web.app.BaseWebApp"
             android:value="IModuleConfig" />
 
         <activity
-            android:name=".web.WebActivity"
+            android:name="com.jay.base_web.web.WebActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".web.TestActivity"
+            android:name="com.jay.base_web.web.TestActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".fileview.PdfOnlineViewActivity"
+            android:name="com.jay.base_web.fileview.PdfOnlineViewActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".fileview.TestActivity"
+            android:name="com.jay.base_web.fileview.TestActivity"
             android:screenOrientation="portrait" />
     </application>
 </manifest>

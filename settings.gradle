@@ -1,9 +1,11 @@
+include ':biz:biz-english'
 rootProject.name = 'awesome-dev-practice'
 /**
  * 有关组件化的一些信息请参考此项目：[WanDroid组件化](https://github.com/Jay-Droid/WanDroid)
  */
 include ':app:dev',
         ':app:app-detail',
+        ':app:app-english',
         ':app:app-android',
         ':app:app-java',
         ':app:app-kotlin'
