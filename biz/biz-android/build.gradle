@@ -4,5 +4,6 @@ apply from: "../../buildgradle/biz.gradle"
 dependencies {
 
     implementation project(path: ':base:base-dev')
+    implementation project(path: ':lib:lib-cpu-helper')
     implementation rootProject.ext.recyclerAdapterHelper
 }

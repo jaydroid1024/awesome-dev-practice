@@ -1,0 +1,6 @@
+apply from: "../../buildgradle/biz.gradle"
+
+
+dependencies {
+    implementation rootProject.ext.recyclerAdapterHelper
+}

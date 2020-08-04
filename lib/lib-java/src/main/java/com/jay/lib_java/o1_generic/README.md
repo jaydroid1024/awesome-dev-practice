@@ -3,7 +3,7 @@
 
 [Oracle Java 泛型官方教程-中文版](https://pingfangx.github.io/java-tutorials/java/generics/index.html)
 
-[本文完整测试代码-GitHub]()
+[本文完整测试代码-GitHub](https://github.com/Jay-Droid/awesome-dev-practice/tree/master/lib/lib-java/src/main/java/com/jay/lib_java/o1_generic)
 
 # 一，打破砂锅问到底
 - 什么是泛型？Java 泛型的来源？
@@ -58,11 +58,11 @@ Java Type 体系 完整测试代码：JavaGenericDemo#Demo1()
       返回泛型数组中元素的Type类型，如：List<String>[] 中的 List<String>（ParameterizedTypeImpl）、T[] 中的T（TypeVariableImpl）；
       无论是几维数组，getGenericComponentType()方法都只会脱去最右边的[]，返回剩下的值。
 - 参数化类型(ParameterizedType): 就是用了泛型的类，如 List<String>、Map<String,Integer>；
-     - Type[] getActualTypeArguments()：获取泛型中的实际类型的对象的数组，该方法只会脱去最外层的<> 返回剩下的值。如：Map<String, Integer> 中的[String,Integer], List<Map<String, Integer>>中的[Map<String, Integer>]
+     - Type[] getActualTypeArguments()：获取泛型中的实际类型的对象的数组，该方法只会脱去最外层的<> 返回剩下的值。如：Map<String, Integer> 中的<String,Integer>, List<Map<String, Integer>>中的<Map<String, Integer>>
      - Type getRawType(); 获取声明泛型的类或者接口，也就是泛型中<>前面的那个值；如：Map<String, Integer> 中的 Map
      - Type getOwnerType(): 获取泛型的拥有者，拥有者表示的含义是内部类的父类如：Map.Entry<String, Integer> 中的 Map
 - 泛型变量(TypeVariable): 是各种泛型类型变量的公共高级接口，如 T,K,V
-     -  Type[] getBounds() 获得该类型变量的上限，也就是泛型中 extends 右边的值；例如 List<T extends Number> ，Number就是类型变量T的上限；如果只是简单的声明了List<T>（无显式定义extends），那么默认为返回Object。如：TypeVariableTest<T extends Number & Serializable & Comparable> 中的[Number,Serializable,Comparable]
+     -  Type[] getBounds() 获得该类型变量的上限，也就是泛型中 extends 右边的值；例如 List<T extends Number> ，Number就是类型变量T的上限；如果只是简单的声明了List<T>（无显式定义extends），那么默认为返回Object。如：TypeVariableTest<T extends Number & Serializable & Comparable> 中的<Number,Serializable,Comparable>
      -  getGenericDeclaration() 获取声明该类型变量实体类型，如：TypeVariableTest<T>中的TypeVariableTest
      -  getName() 获取类型变量在源码中定义的名称；TypeVariableTest<T>中的 T
 
