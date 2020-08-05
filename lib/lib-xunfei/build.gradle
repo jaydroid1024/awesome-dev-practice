@@ -1,0 +1,7 @@
+apply from: "../../buildgradle/lib.gradle"
+
+dependencies {
+
+    api project(path:  ':lib:lib-xunfei-msc-jar')
+
+}

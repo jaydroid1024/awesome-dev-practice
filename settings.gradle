@@ -1,3 +1,6 @@
+include ':lib:lib-xunfei-msc-jar'
+include ':lib:lib-xunfei'
+include ':base:base-speech'
 include ':biz:biz-movie'
 rootProject.name = 'awesome-dev-practice'
 /**
@@ -8,6 +11,7 @@ include ':app:dev',
         ':app:app-english',
         ':app:app-android',
         ':app:app-java',
+        ':app:app-template',
         ':app:app-kotlin'
 
 include ':biz:biz-detail',

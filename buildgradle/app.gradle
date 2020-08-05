@@ -27,6 +27,11 @@ android {
                 arg("AROUTER_MODULE_NAME", project.getName())
             }
         }
+        // Bugtags Crash收集
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi', 'armeabi-v7a'// 'x86', 'mips', 'x86_64', 'arm64-v8a'
+        }
 
         /* Enabling multidex support.当DEX中的方法数超过最大值65536时,需要使用,否则打包apk会失败*/
         multiDexEnabled true
