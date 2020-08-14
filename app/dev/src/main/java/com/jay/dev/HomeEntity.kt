@@ -11,8 +11,6 @@ data class HomeEntity(
     val name: String = "",
     val activityPath: String = "",
     val imageResource: Int = 0,
-    val headerTitle: String = ""
-) : SectionEntity {
-    override val isHeader: Boolean
-        get() = headerTitle.isNotBlank()
+    val headerTitle: String = "") : SectionEntity {
+    override val isHeader: Boolean get() = headerTitle.isNotBlank()
 }

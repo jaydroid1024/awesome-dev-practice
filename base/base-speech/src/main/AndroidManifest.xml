@@ -3,9 +3,8 @@
     package="com.jay.base_speech">
 
     <application>
-        <activity android:name=".MainActivity" />
-
-        <!--appLife ,name需要是全类名-->
+        <activity android:name=".speech.SpeechActivity"/>
+        <activity android:name=".MainActivity" /> <!-- appLife ,name需要是全类名 -->
         <meta-data
             android:name="com.jay.base_speech.app.BaseSpeechApp"
             android:value="IModuleConfig" />

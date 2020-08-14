@@ -1,0 +1,9 @@
+apply from: "../../buildgradle/biz_components.gradle"
+
+dependencies {
+
+    //需要所有使用 ARouter 的组件都添加依赖
+    kapt rootProject.ext.arouterCompiler
+
+    implementation project(path: ':base:base-component')
+}

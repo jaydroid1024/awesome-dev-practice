@@ -1,12 +1,11 @@
 package com.jay.base_component.base.mvp
 
-import android.util.Log
-import com.jay.base_component.network.bean.wan.BaseResponse
-import com.jay.base_component.network.error.ApiException
 import com.jay.base_component.network.error.ExceptionHandler
 import io.reactivex.observers.DisposableObserver
+import io.reactivex.plugins.RxJavaPlugins
 
-abstract class BaseObserver<T> : DisposableObserver<BaseResponse<T>> {
+abstract class BaseObserver<T> : DisposableObserver<T> {
+
 
     private var baseView: IView? = null
 
@@ -21,29 +20,27 @@ abstract class BaseObserver<T> : DisposableObserver<BaseResponse<T>> {
         baseView?.showLoading()
     }
 
-    override fun onNext(response: BaseResponse<T>) {
+    override fun onNext(response: T) {
         baseView?.dismissLoading()
-        Log.e("debug", "response = ${response.errorCode}")
-        val errorCode: Int = response.errorCode ?: -1
-        val errorMsg: String = response.errorMsg ?: ""
-        val error: Boolean = response.error ?: true
-        if ((errorCode == 0) or (errorCode == 200)) {
-            onSuccess(response.data)
-        } else if (!error) {
-            onSuccess(response.results)
-        } else {
-            onError(ApiException(errorCode, errorMsg))
-        }
+        onSuccess(response)
     }
 
     override fun onError(e: Throwable) {
         ExceptionHandler.handleException(e)
     }
 
-    abstract fun onSuccess(data: T?)
+    private fun setRxJavaErrorHandler() {
+        RxJavaPlugins.setErrorHandler(Throwable::printStackTrace)
+    }
+
+    abstract fun onSuccess(data: T)
 
     override fun onComplete() {
         baseView?.dismissLoading()
+    }
+
+    companion object {
+        const val TAG = "BaseObserver"
     }
 
 }

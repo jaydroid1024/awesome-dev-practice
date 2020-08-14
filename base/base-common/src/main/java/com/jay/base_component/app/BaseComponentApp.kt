@@ -7,6 +7,7 @@ import android.util.Log
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor
+import com.jay.base_component.config.AppConfigHelper
 import com.jay.base_component.network.default_net.DefaultNetFactory
 import com.jay.base_lib.app.appdelegate.IAppLife
 import com.jay.base_lib.app.appdelegate.PriorityLevel
@@ -30,12 +31,16 @@ class BaseComponentApp : IAppLife {
         Log.d(TAG, "onCreate")
         app = application
         instance = this
-        cookieJar = PersistentCookieJar(SetCookieCache(), SharedPrefsCookiePersistor(application))
-
         //初始化工具类
         Utils.init(application)
+        initApp()
+    }
+
+    private fun initApp() {
+        cookieJar = PersistentCookieJar(SetCookieCache(), SharedPrefsCookiePersistor(getApp()))
+        AppConfigHelper.cacheDefaultAppConfig()
         //初始化网络库
-        DefaultNetFactory.initialize(application)
+        DefaultNetFactory.initialize(getApp())
 
     }
 

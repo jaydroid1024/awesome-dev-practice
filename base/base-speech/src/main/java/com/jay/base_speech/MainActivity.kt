@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.iflytek.voicedemo.XunFeiSpeechMainActivity
+import com.iflytek.mscv5plusdemo.XunfeiMainActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,12 +13,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun goToXunFeiSpeech(view: View) {
-        startActivity(Intent(this, XunFeiSpeechMainActivity::class.java))
+        startActivity(Intent(this, XunfeiMainActivity::class.java))
 
     }
 
     fun goToBaiDuSpeech(view: View) {
-        startActivity(Intent(this, XunFeiSpeechMainActivity::class.java))
+        startActivity(Intent(this, XunfeiMainActivity::class.java))
 
     }
 }

@@ -3,6 +3,8 @@ package com.jay.base_component.network.error
 import android.widget.Toast
 import com.google.gson.JsonParseException
 import com.jay.base_component.app.BaseComponentApp
+import com.jay.base_component.base.mvp.BaseObserver
+import com.jay.base_lib.utils.L
 import org.apache.http.conn.ConnectTimeoutException
 import org.json.JSONException
 import retrofit2.HttpException
@@ -64,10 +66,12 @@ class ExceptionHandler {
                     errorMsg = "网络链接异常，请稍后重试"
                 }
             }
+            L.e(BaseObserver.TAG, errorMsg)
             Toast.makeText(BaseComponentApp.getApp(), errorMsg, Toast.LENGTH_LONG).show()
         }
 
         private fun handleServerException(errorCode: Int) {
+            L.e(BaseObserver.TAG, "errorCode:$errorCode")
             when (errorCode) {
 
             }

@@ -36,9 +36,14 @@ android {
         Properties props
         if (it.name == "debug") {
             props = rootProject.ext.environment['debugEnvironmentProps']
+
         } else {
             props = rootProject.ext.environment['liveEnvironmentProps']
         }
+        //将当前指定到环境转为Json缓存到BuildConfig中
+        it.buildConfigField("String", "DEBUG_ENVIRONMENT_JSON", String.format(Locale.getDefault(), "\"%s\"", rootProject.ext.environment['debugEnvironmentJson']))
+        it.buildConfigField("String", "RELEASE_ENVIRONMENT_JSON", String.format(Locale.getDefault(), "\"%s\"", rootProject.ext.environment['releaseEnvironmentJson']))
+        //打包时指定的app类型
         it.buildConfigField("String", "BASE_URL", String.format(Locale.getDefault(), "\"%s\"", props["base_url"]))
 
     }

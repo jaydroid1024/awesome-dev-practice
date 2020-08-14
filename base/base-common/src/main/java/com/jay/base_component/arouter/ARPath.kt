@@ -12,6 +12,24 @@ object ARPath {
 
 
     /**
+     * hide 组件
+     */
+    object PathHide {
+
+        /**
+         * group name
+         */
+        private const val HIDE = "/hide"
+
+        /**
+         * hide 服务
+         */
+        const val HIDE_SERVICE_PATH = "$HIDE/app_config/service"
+
+
+    }
+
+    /**
      * dev 主入口组件
      */
     object PathDev {
@@ -25,6 +43,29 @@ object ARPath {
          * 主页面
          */
         const val DEV_ACTIVITY_PATH = "$GROUP/dev/dev/activity"
+
+        /**
+         * 测试页面
+         */
+        const val TEST_ACTIVITY_PATH = "$GROUP/dev/test/activity"
+
+    }
+
+
+    /**
+     * dev 电影组件
+     */
+    object PathMovie {
+
+        /**
+         * group name
+         */
+        private const val GROUP = "/movie"
+
+        /**
+         * 主页面
+         */
+        const val MOVIE_ACTIVITY_PATH = "$GROUP/movie/movie/activity"
 
         /**
          * 测试页面
@@ -132,6 +173,24 @@ object ARPath {
          * 设置页面
          */
         const val SETTING_ACTIVITY_PATH = "$SETTING/setting/activity"
+
+
+    }
+
+    /**
+     * speech 组件
+     */
+    object PathSpeech {
+
+        /**
+         * group name
+         */
+        private const val GROUP = "/speech"
+
+        /**
+         * 文字转语音页面页面
+         */
+        const val SPEECH_ACTIVITY_PATH = "$GROUP/speech/activity"
 
 
     }

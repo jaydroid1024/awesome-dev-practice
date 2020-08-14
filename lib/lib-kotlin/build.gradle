@@ -4,6 +4,8 @@ apply plugin: 'kotlin'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rootProject.ext.kotlinStdlibJdk8
+    implementation rootProject.ext.gson
+
 }
 
 sourceCompatibility = "8"

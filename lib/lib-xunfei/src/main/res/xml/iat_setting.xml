@@ -35,5 +35,11 @@
 		android:key="@string/pref_key_iat_show"
 		android:title="@string/pref_title_iat_show"
 		android:defaultValue="true" />
+	
+<!--	<CheckBoxPreference
+		android:key="@string/pref_key_translate"
+		android:title="@string/pref_title_translate"
+		android:defaultValue="false" />-->
+
 </PreferenceScreen>
 

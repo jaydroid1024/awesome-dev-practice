@@ -20,8 +20,8 @@ import com.jay.base_component.utils.dp2px
 import com.jay.base_component.widget.webview.XWebView
 import com.jay.base_lib.utils.ToastUtils
 import com.jay.detail.R
-import com.jay.detail.web.contract.WebContract
-import com.jay.detail.web.presenter.WebPresenter
+import com.jay.detail.web.mvp.WebContract
+import com.jay.detail.web.mvp.WebPresenter
 import com.tencent.mm.opensdk.constants.ConstantsAPI
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX
 import com.tencent.mm.opensdk.openapi.WXAPIFactory
@@ -29,7 +29,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 @Route(path = ARPath.PathDetail.DETAIL_ACTIVITY_PATH)
-class WebViewActivity : BaseMVPActivity<WebContract.View, WebPresenter>(), WebContract.View {
+class WebViewActivity : BaseMVPActivity<WebContract.View, WebContract.Presenter>(), WebContract.View {
 
     private lateinit var toolbar: Toolbar
     private var webView: XWebView? = null

@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.res.Configuration
 import android.util.Log
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
-import com.iflytek.voicedemo.SpeechApp
+import com.iflytek.mscv5plusdemo.SpeechApp
 import com.jay.base_lib.app.appdelegate.IAppLife
 import com.jay.base_lib.app.appdelegate.PriorityLevel
 
@@ -27,7 +27,7 @@ class BaseSpeechApp : IAppLife {
         Log.d(TAG, "onCreate")
         app = application
         instance = this
-        SpeechApp.init(app)
+        SpeechApp.onCreate(app)
 
     }
 

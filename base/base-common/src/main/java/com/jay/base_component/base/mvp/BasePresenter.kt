@@ -15,7 +15,15 @@ open class BasePresenter<V : IView> : IPresenter<V> {
     private lateinit var viewReference: WeakReference<V>
     private var disposable: CompositeDisposable = CompositeDisposable()
 
-    fun <T> addSubscribe(observable: Observable<BaseResponse<T>>, baseObserver: BaseObserver<T>) {
+    fun <T> addSubscribe(observable: Observable<BaseResponse<T>>, baseObserver: BaseResponseObserver<T>) {
+        val observer =
+            observable.subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(baseObserver)
+        disposable.add(observer)
+    }
+
+    fun <T> addSubscribe(observable: Observable<T>, baseObserver: BaseObserver<T>) {
         val observer =
             observable.subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())

@@ -1,3 +1,5 @@
+import groovy.json.JsonOutput
+
 // 根据exext属性是ExtensionAware类型的一个特殊的属性，本质是一个Map类型的变量，
 // 而 ExtentionAware接口的实现类为Project, Settings, Task, SourceSet等，
 // ExtentionAware可以在运行时扩充属性，而这里的ext，就是里面的一个特殊的属性而已。
@@ -207,6 +209,7 @@ ext {
             storePass     : keyProps["storePass"]
     ]
 
+
     /* ========================================================= */
     /* ========================环境变量信息======================= */
     /* ========================================================= */
@@ -216,11 +219,23 @@ ext {
 //    println("debugEnvironmentProps:$debugEnvironmentProps")
 //    println("liveEnvironmentProps:$liveEnvironmentProps")
 //    println("propertyType:${getEnvironmentPropertyType()}")
+
+    //将当前指定到环境转为Json缓存到BuildConfig中
+    def debugEnvironmentJson = getAllEnvironmentJson(debugEnvironmentProps)
+    println("debugEnvironmentJson:$debugEnvironmentJson")
+    //将当前指定到环境转为Json缓存到BuildConfig中
+    def releaseEnvironmentJson = getAllEnvironmentJson(liveEnvironmentProps)
+    println("releaseEnvironmentJson:$releaseEnvironmentJson")
     environment = [
             // 测试环境 Properties dev local
-            debugEnvironmentProps: debugEnvironmentProps,
+            debugEnvironmentProps : debugEnvironmentProps,
             // 线上环境 Properties live
-            liveEnvironmentProps : liveEnvironmentProps
+            liveEnvironmentProps  : liveEnvironmentProps,
+
+            // 测试环境 json dev local
+            debugEnvironmentJson  : debugEnvironmentJson,
+            // 线上环境 json live
+            releaseEnvironmentJson: releaseEnvironmentJson
     ]
 
     /* ========================================================= */
@@ -246,6 +261,18 @@ ext {
 
 }
 
+
+/**
+ * 将集合转为json 字符串
+ * @param allEnvironmentList
+ * @return
+ */
+static String getAllEnvironmentJson(Object allEnvironmentList) {
+    // 使用assert确保存在该属性否则报错，避免错误打包
+    assert allEnvironmentList
+    def jsonList = new JsonOutput().toJson(allEnvironmentList)
+    return jsonList.replaceAll("\"", "\\\\\"")
+}
 
 /**
  * 获取属性总配置文件

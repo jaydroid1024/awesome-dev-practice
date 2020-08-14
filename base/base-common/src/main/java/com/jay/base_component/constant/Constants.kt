@@ -28,6 +28,16 @@ object Constants {
          * key:auth_github_token
          */
         const val AUTH_GITHUB_TOKEN = "auth_github_token"
+
+        /**
+         * key:app配置信息
+         */
+        const val CONFIG_INFO = "app_config_info"
+
+        /**
+         * key:app本地配置配置列表
+         */
+        const val CONFIG_LOCAL_LIST = "config_local_list"
     }
     /* ========================================================= */
     /* ======================= HashMap Keys ==================== */
