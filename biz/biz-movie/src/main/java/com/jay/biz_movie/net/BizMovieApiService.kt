@@ -1,9 +1,10 @@
 package com.jay.biz_movie.net
 
+import com.jay.biz_movie.entity.MovieDetailsResponse
 import com.jay.biz_movie.entity.MovieListResponse
 import io.reactivex.Observable
-import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
@@ -28,6 +29,17 @@ interface BizMovieApiService {
         @Query("start") start: Int,
         @Query("count") count: Int
     ): Observable<MovieListResponse?>
+
+
+    /**
+     * ### 电影详情：
+     * https://api.douban.com/v2/movie/subject/1292052?apikey=0df993c66c0c636e29ecbb5344252a4a
+     */
+    @GET("v2/movie/subject/{movieId}")
+    fun getMovieDetails(
+        @Path("movieId") movieId: String,
+        @Query("apikey") apikey: String?
+    ): Observable<MovieDetailsResponse?>
 
 
 }

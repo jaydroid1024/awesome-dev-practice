@@ -35,6 +35,11 @@ object Constants {
         const val CONFIG_INFO = "app_config_info"
 
         /**
+         * key:MCU 电影
+         */
+        const val MCU_MOVIE = "mcu_movie"
+
+        /**
          * key:app本地配置配置列表
          */
         const val CONFIG_LOCAL_LIST = "config_local_list"

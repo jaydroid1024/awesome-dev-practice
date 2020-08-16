@@ -6,7 +6,7 @@ import com.jay.base_component.arouter.ARPath
 import com.jay.base_component.arouter.service.user.UserService
 import com.jay.base_component.config.AppConfigHelper
 import com.jay.base_component.network.auth.AuthAbstractNetwork
-import com.jay.base_component.network.default_net.RxUtil
+import com.jay.biz_movie.entity.MovieDetailsResponse
 import com.jay.biz_movie.entity.MovieListResponse
 import io.reactivex.Observable
 
@@ -25,6 +25,7 @@ class BizMovieNetwork(context: Context) : AuthAbstractNetwork<BizMovieApiService
      * 用户服务管理类
      */
     var userService: UserService? = null
+    val apikey = AppConfigHelper.getAppConfig()?.BIZ_MOVIE_DOUBAN_APIKEY_1
 
     init {
         //获取Token服务管理类实例
@@ -37,10 +38,15 @@ class BizMovieNetwork(context: Context) : AuthAbstractNetwork<BizMovieApiService
 
     override val apiServiceClass: Class<BizMovieApiService> get() = BizMovieApiService::class.java
 
-    fun getMCUMovie(apikey: String?, start: Int, count: Int): Observable<MovieListResponse?> {
+    fun getMCUMovie(start: Int, count: Int): Observable<MovieListResponse?> {
         return getApiService()
-            .getMCUMovie(apikey,start,count)
-            .compose(RxUtil.applyObservableTransformer())
+            .getMCUMovie(apikey, start, count)
+    }
+
+    fun getMovieDetails(movieId: String): Observable<MovieDetailsResponse?> {
+        return getApiService()
+            .getMovieDetails(movieId,apikey)
+
     }
 
     companion object {

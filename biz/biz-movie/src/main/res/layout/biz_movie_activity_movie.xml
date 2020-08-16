@@ -13,6 +13,6 @@
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="1"
-        tools:listitem="@layout/home_item_view" />
+        tools:listitem="@layout/biz_movie_item_view" />
 
 </LinearLayout>
