@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black_50"
+    android:background="@color/bg_movie"
     android:orientation="vertical">
 
     <com.jay.biz_movie.marqueerecyclerview.MarqueeRecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/bg_movie"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="1"
         tools:listitem="@layout/biz_movie_item_view" />

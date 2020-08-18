@@ -9,6 +9,7 @@ import com.chad.library.adapter.base.entity.SectionEntity
  */
 data class MovieItem(
     var id: String = "",
+    var index: String = "",
     var originalTitle: String = "",
     var title: String = "",
     var year: String = "",

@@ -39,7 +39,7 @@ public class MarqueeRecyclerView extends RecyclerView {
         public void run() {
             MarqueeRecyclerView recyclerView = mReference.get();
             if (recyclerView != null && recyclerView.running &&recyclerView.canRun) {
-                recyclerView.scrollBy(2, 5);
+                recyclerView.scrollBy(2, 2);
                 recyclerView.postDelayed(recyclerView.autoPollTask,recyclerView.TIME_AUTO_POLL);
             }
         }

@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.google.gson.reflect.TypeToken
@@ -54,7 +56,7 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
         layoutManager.setLooperEnable(false)
         binding.recyclerView.layoutManager = layoutManagerNormal
         binding.recyclerView.adapter = homeAdapter
-        binding.recyclerView.setAutoRun(false)
+        binding.recyclerView.setAutoRun(true)
         binding.recyclerView.start()
 
         testData()
@@ -62,6 +64,44 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
         initMCU()
 
 
+    }
+
+    /**
+     * RV适配器
+     */
+    private val homeAdapter by lazy {
+        MovieAdapter(MovieDataHelper.getMarvelMCUMovieTimeOrderedList())
+            .apply {
+                animationEnable = true
+                val top =
+                    layoutInflater.inflate(R.layout.biz_movie_top_view, binding.recyclerView, false)
+
+                val top1Img = top.findViewById<ImageView>(R.id.iv_top1)
+                val top2Img = top.findViewById<ImageView>(R.id.iv_top2)
+                top2Img.visibility = View.GONE
+                val top3Img = top.findViewById<ImageView>(R.id.iv_top3)
+                val top1Pic =
+                    "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597591248997&di=bbdd5132ec439bac3b29a41d16a6a7cb&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171105%2F84372d114505486487a790d5dec8adaf.jpeg"
+                val top2Pic =
+                    "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597591290385&di=82d75a18d07dd652b5030ac8c10f90f4&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20190303%2Fdd73dfbf267f474198c7bed4120b0f7e.jpeg"
+                val top3Pic =
+                    "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597590820219&di=fd4817599736ea22c967901b93a72fd4&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn14%2F173%2Fw2000h1373%2F20180817%2Ffdd8-hhvciiw6328880.jpg"
+                Glide.with(this@MovieActivity)
+                    .load(top1Pic)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(top1Img!!)
+                Glide.with(this@MovieActivity)
+                    .load(top2Pic)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(top2Img!!)
+                Glide.with(this@MovieActivity)
+                    .load(top3Pic)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(top3Img!!)
+
+                addHeaderView(top)
+                setOnItemClickListener(this@MovieActivity)
+            }
     }
 
     private fun initMCU() {
@@ -77,7 +117,7 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
         //        getIdList()
         //        getMCUList(mcuIndex)
 
-        //        getCacheMovie()
+//        getCacheMovie()
     }
 
     /**
@@ -92,6 +132,10 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
 
         marvelMCUMovieList!!.sortBy {
             it.year
+        }
+        for ((ind, i) in marvelMCUMovieList!!.withIndex()) {
+            i.index = ind.toString()
+            Log.d("okhttp", "index: " + i)
         }
         val json = GsonUtils.toJson(marvelMCUMovieList)
         Log.d("okhttp", "总共：" + marvelMCUMovieList?.size)
@@ -163,25 +207,7 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
         return 0
     }
 
-    /**
-     * RV适配器
-     */
-    private val homeAdapter by lazy {
-        MovieAdapter(MovieDataHelper.getMarvelMCUMovieTimeOrderedList())
-            .apply {
-                animationEnable = true
-                val top =
-                    layoutInflater.inflate(R.layout.biz_movie_top_view, binding.recyclerView, false)
 
-                val topImg = top.findViewById<ImageView>(R.id.iv_top)
-
-                val moviePic =
-                    "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p725871968.webp"
-//                Glide.with(this@MovieActivity).load(moviePic).into(topImg)
-                addHeaderView(top)
-                setOnItemClickListener(this@MovieActivity)
-            }
-    }
 
 
     private val homeItemData: ArrayList<MovieItemEntity>
