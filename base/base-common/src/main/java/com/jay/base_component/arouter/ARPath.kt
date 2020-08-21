@@ -188,6 +188,12 @@ object ARPath {
         private const val GROUP = "/speech"
 
         /**
+         * 文字转语音页面测试页面
+         */
+        const val MAIN_SPEECH_ACTIVITY_PATH = "$GROUP/main/test/speech/activity"
+
+        /**
+         *
          * 文字转语音页面页面
          */
         const val SPEECH_ACTIVITY_PATH = "$GROUP/speech/activity"

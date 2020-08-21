@@ -3,9 +3,8 @@
     package="com.jay.biz_movie">
 
     <application>
-        <activity
-
-            android:name=".movie_douban.MovieActivity"/>
+        <activity android:name=".movie_douban.MovieActivity" />
     </application>
+
 
 </manifest>

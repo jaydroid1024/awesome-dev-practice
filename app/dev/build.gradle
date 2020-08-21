@@ -91,6 +91,8 @@ dependencies {
 
     implementation project(path: ':base:base-web')
 
+    implementation project(path: ':base:base-speech')
+
     implementation project(path: ':biz:biz-movie')
 
     implementation rootProject.ext.appcompat

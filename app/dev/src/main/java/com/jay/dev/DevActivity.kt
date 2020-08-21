@@ -54,8 +54,8 @@ class DevActivity : AppCompatActivity(), OnItemClickListener {
     private val homeItemData: ArrayList<HomeEntity>
         get() = arrayListOf(
             HomeEntity(headerTitle = "基本技能-计算机系统&网络知识体系"),
-            HomeEntity("WEB", ARPath.PathMovie.MOVIE_ACTIVITY_PATH, R.mipmap.ic_bald),
-            HomeEntity("FILE", ARPath.PathWeb.FILE_VIEW_TEST_ACTIVITY_PATH, R.mipmap.ic_bald),
+            HomeEntity("电影", ARPath.PathMovie.MOVIE_ACTIVITY_PATH, R.mipmap.ic_bald),
+            HomeEntity("语音识别", ARPath.PathSpeech.MAIN_SPEECH_ACTIVITY_PATH, R.mipmap.ic_bald),
             HomeEntity("计算机", ARPath.PathDetail.DETAIL_ACTIVITY_PATH, R.mipmap.ic_bald),
             HomeEntity("操作系统", ARPath.PathDev.DEV_ACTIVITY_PATH, R.mipmap.ic_bald),
             HomeEntity("网络", ARPath.PathDev.DEV_ACTIVITY_PATH, R.mipmap.ic_bald),

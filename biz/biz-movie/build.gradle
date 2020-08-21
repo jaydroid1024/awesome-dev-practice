@@ -5,5 +5,8 @@ dependencies {
 
     implementation rootProject.ext.recyclerAdapterHelper
     implementation rootProject.ext.banner
+    implementation rootProject.ext.circleimageview
+    implementation rootProject.ext.tagcloudlib
+
 
 }

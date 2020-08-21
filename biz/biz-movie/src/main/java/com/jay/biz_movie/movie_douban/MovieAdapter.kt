@@ -32,11 +32,11 @@ class MovieAdapter(data: MutableList<MovieItem>) :
         helper.setText(R.id.text, item.year + "\n 《" + item.title + "》 ")
         helper.setText(R.id.text_sub, item.originalTitle)
         helper.setText(R.id.index, "" + (item.index.toInt() + 1))
-        if (item.index.toInt() == 0) {
-            helper.setGone(R.id.view_line, true)
-        } else {
-            helper.setGone(R.id.view_line, false)
-        }
+//        if (item.index.toInt() == 0) {
+//            helper.setGone(R.id.view_line, true)
+//        } else {
+//            helper.setGone(R.id.view_line, false)
+//        }
 
 
         val itemImg = helper.getView<ImageView>(R.id.icon)

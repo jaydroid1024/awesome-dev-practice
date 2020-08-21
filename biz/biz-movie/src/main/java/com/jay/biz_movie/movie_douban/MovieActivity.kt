@@ -1,5 +1,6 @@
 package com.jay.biz_movie.movie_douban
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -11,6 +12,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.google.gson.reflect.TypeToken
+import com.jay.base_component.arouter.ARHelper
 import com.jay.base_component.arouter.ARPath
 import com.jay.base_component.base.mvp.BaseMVPActivity
 import com.jay.base_component.constant.Constants
@@ -27,6 +29,7 @@ import com.jay.biz_movie.entity.MovieListResponse
 import com.jay.biz_movie.marqueerecyclerview.LooperLayoutManager
 import com.jay.biz_movie.movie_douban.mvp.MovieContract
 import com.jay.biz_movie.movie_douban.mvp.MoviePresenter
+import com.moxun.tagcloudlib.view.TagCloudView
 
 
 @Route(path = ARPath.PathMovie.MOVIE_ACTIVITY_PATH)
@@ -47,10 +50,32 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         binding = BizMovieActivityMovieBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initMovieList()
+
+//        testData()
+
+//        initMCU()
+
+//        goToSpeechPage()
+    }
+
+    private fun goToSpeechPage() {
+        val map = HashMap<String, Any>()
+        map[Constants.MapKey.TITLE] = "漫威电影宇宙\n第三阶段电影"
+        ARHelper.routerToWithJson(map, ARPath.PathSpeech.SPEECH_ACTIVITY_PATH, this, 0)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        initMovieList()
+    }
+
+
+    private fun initMovieList() {
         val layoutManager = LooperLayoutManager()
         val layoutManagerNormal = LinearLayoutManager(this)
         layoutManager.setLooperEnable(false)
@@ -58,19 +83,14 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
         binding.recyclerView.adapter = homeAdapter
         binding.recyclerView.setAutoRun(true)
         binding.recyclerView.start()
-
-        testData()
-
-        initMCU()
-
-
     }
 
     /**
      * RV适配器
      */
     private val homeAdapter by lazy {
-        MovieAdapter(MovieDataHelper.getMarvelMCUMovieTimeOrderedList())
+        val a = MovieDataHelper.getMarvelMCUMovieTimeOrderedList()
+        MovieAdapter(a)
             .apply {
                 animationEnable = true
                 val top =
@@ -80,6 +100,7 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
                 val top2Img = top.findViewById<ImageView>(R.id.iv_top2)
                 top2Img.visibility = View.GONE
                 val top3Img = top.findViewById<ImageView>(R.id.iv_top3)
+                var tagCloudView = top.findViewById<TagCloudView>(R.id.tag_cloud)
                 val top1Pic =
                     "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597591248997&di=bbdd5132ec439bac3b29a41d16a6a7cb&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171105%2F84372d114505486487a790d5dec8adaf.jpeg"
                 val top2Pic =
@@ -98,9 +119,20 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
                     .load(top3Pic)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(top3Img!!)
+                val arrayList = ArrayList<String>()
 
+                a.forEach {
+                    it.casts?.forEach {
+                        arrayList.add(it?.avatars?.medium ?: "")
+                    }
+                }
+
+                val textTagsAdapter = TextTagsAdapter(arrayList)
+                tagCloudView.setAdapter(textTagsAdapter)
                 addHeaderView(top)
                 setOnItemClickListener(this@MovieActivity)
+
+
             }
     }
 

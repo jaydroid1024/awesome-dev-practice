@@ -15,7 +15,8 @@ import com.iflytek.mscv5plusdemo.R;
  * 合成设置界面
  */
 public class TtsSettings extends PreferenceActivity implements OnPreferenceChangeListener {
-	
+
+
 	public static final String PREFER_NAME = "com.iflytek.setting";
 	private EditTextPreference mSpeedPreference;
 	private EditTextPreference mPitchPreference;

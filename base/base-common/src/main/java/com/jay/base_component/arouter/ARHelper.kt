@@ -71,8 +71,8 @@ object ARHelper {
     fun routerToWithJson(
         mapParams: HashMap<String, Any>,
         path: String,
-        requestCode: Int,
-        activity: Activity
+        activity: Activity,
+        requestCode: Int
     ) {
         ARouter.getInstance()
             .build(path)
@@ -94,6 +94,23 @@ object ARHelper {
             .withString(Constants.IntentKey.JSON_PARAMS, mapParams.toJson())
             .withTransition(transition[0], transition[1])
             .navigation(context)
+    }
+
+    /**
+     * ARouter通用跳转方法
+     */
+    fun routerToWithJson(
+        mapParams: HashMap<String, Any>,
+        path: String,
+        context: Activity,
+        requestCode: Int,
+        transition: IntArray
+    ) {
+        ARouter.getInstance()
+            .build(path)
+            .withString(Constants.IntentKey.JSON_PARAMS, mapParams.toJson())
+            .withTransition(transition[0], transition[1])
+            .navigation(context, requestCode)
     }
 
     /**

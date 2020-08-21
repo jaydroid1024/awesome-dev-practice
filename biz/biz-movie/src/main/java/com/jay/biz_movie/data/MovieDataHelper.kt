@@ -87,13 +87,16 @@ object MovieDataHelper {
     fun getMarvelMCUMovieTimeOrderedList(): ArrayList<MovieItem> {
         val nameIdMap = getMarvelMCUMovieNameIdMap()
         val mcuOrderedList = ArrayList<MovieItem>()
+        mcuOrderedList.add(MovieItem(headerTitle = "MCU第一阶段(共6部)"))
+
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.IRON_MAN]))
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.THE_INCREDIBLE_HULK]))
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.IRON_MAN_2]))
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.THOR]))
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.CAPTAIN_AMERICA_THE_FIRST_AVENGER]))
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.THE_AVENGERS]))
-        mcuOrderedList.add(MovieItem(headerTitle = "MCU第一阶段(共6部)"))
+
+        mcuOrderedList.add(MovieItem(headerTitle = "MCU第二阶段(共6部)"))
 
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.IRON_MAN_3]))
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.THOR_THE_DARK_WORLD]))
@@ -101,7 +104,8 @@ object MovieDataHelper {
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.GUARDIANS_OF_THE_GALAXY]))
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.AVENGERS_AGE_OF_ULTRON]))
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.ANT_MAN]))
-        mcuOrderedList.add(MovieItem(headerTitle = "MCU第二阶段(共6部)"))
+//
+        mcuOrderedList.add(MovieItem(headerTitle = "MCU第三阶段(共11部)"))
 
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.CAPTAIN_AMERICA_CIVIL_WAR]))
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.DOCTOR_STRANGE]))
@@ -114,9 +118,8 @@ object MovieDataHelper {
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.CAPTAIN_MARVEL]))
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.AVENGERS_ENDGAME]))
         mcuOrderedList.add(findMCUMovieById(nameIdMap[MCUMovieName.SPIDER_MAN_FAR_FROM_HOME]))
-        mcuOrderedList.add(MovieItem(headerTitle = "MCU第三阶段(共11部)"))
 
-        mcuOrderedList.reverse()
+//        mcuOrderedList.reverse()
 
         return mcuOrderedList
     }

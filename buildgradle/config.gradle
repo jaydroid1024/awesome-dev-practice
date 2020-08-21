@@ -140,6 +140,10 @@ ext {
             // statusbarUtil https://github.com/laobie/StatusBarUtil
             statusbarUtil = "com.jaeger.statusbarutil:library:1.5.1",
 
+            circleimageview = 'de.hdodenhof:circleimageview:3.1.0',
+
+            tagcloudlib= 'com.moxun:tagcloudlib:1.2.0',
+
             // 基础依赖包，必须要依赖 https://github.com/gyf-dev/ImmersionBar
             immersionbar = "com.gyf.immersionbar:immersionbar:$immersionbarVersion",
             // fragment快速实现（可选） https://github.com/gyf-dev/ImmersionBar
