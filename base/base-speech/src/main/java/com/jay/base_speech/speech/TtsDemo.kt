@@ -348,6 +348,10 @@ class TtsDemo : Activity(), View.OnClickListener {
                 mPercentForBuffering, mPercentForPlaying
             )
 
+            if(mPercentForPlaying >= 97){
+                this@TtsDemo.finish()
+            }
+
             Log.d(TAG, "onSpeakProgress,process: ] =${process}")
 
         }

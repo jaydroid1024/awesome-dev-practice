@@ -32,6 +32,7 @@
                 android:id="@+id/iv_top2"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:visibility="gone"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/biz_movie_ic_launcher" />
 

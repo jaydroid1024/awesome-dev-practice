@@ -16,10 +16,7 @@ import com.jay.base_component.arouter.ARHelper
 import com.jay.base_component.arouter.ARPath
 import com.jay.base_component.base.mvp.BaseMVPActivity
 import com.jay.base_component.constant.Constants
-import com.jay.base_lib.utils.FileUtils
-import com.jay.base_lib.utils.GsonUtils
-import com.jay.base_lib.utils.SPUtils
-import com.jay.base_lib.utils.ToastUtils
+import com.jay.base_lib.utils.*
 import com.jay.biz_movie.R
 import com.jay.biz_movie.data.MovieDataHelper
 import com.jay.biz_movie.databinding.BizMovieActivityMovieBinding
@@ -45,6 +42,8 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
 
     private var mcuIndex: Int = 0
 
+    private var movieType: String = ""
+
     private val moviePic =
         "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p725871968.webp"
 
@@ -53,19 +52,45 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         binding = BizMovieActivityMovieBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initIntent()
 
-        initMovieList()
+//        initMovieList()
 
 //        testData()
 
 //        initMCU()
 
-//        goToSpeechPage()
+        goToSpeechPage()
     }
+
+    private fun initIntent() {
+        val mMapParams =
+            intent.getSerializableExtra(Constants.IntentKey.MAP_PARAMS) as? java.util.HashMap<*, *>
+        movieType = mMapParams.let { (it?.get(Constants.MapKey.TYPE) as? String).toString() }
+        L.d("Jay", "movieType:$movieType")
+
+    }
+
 
     private fun goToSpeechPage() {
         val map = HashMap<String, Any>()
-        map[Constants.MapKey.TITLE] = "漫威电影宇宙\n第三阶段电影"
+        when (movieType) {
+            "1" -> {
+                map[Constants.MapKey.TITLE] = "漫威电影宇宙之无限传奇系列电影\n第一阶段电影"
+            }
+            "2" -> {
+                map[Constants.MapKey.TITLE] = "漫威电影宇宙之无限传奇系列电影\n第二阶段电影"
+            }
+            "3" -> {
+                map[Constants.MapKey.TITLE] = "漫威电影宇宙之无限传奇系列电影\n第三阶段电影"
+            }
+            else -> {
+                map[Constants.MapKey.TITLE] = "漫威电影宇宙之无限传奇系列电影"
+
+            }
+        }
+
+//        map[Constants.MapKey.TITLE] = "漫威电影宇宙之无限传奇系列电影\n第一阶段电影"
         ARHelper.routerToWithJson(map, ARPath.PathSpeech.SPEECH_ACTIVITY_PATH, this, 0)
     }
 
@@ -89,7 +114,16 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
      * RV适配器
      */
     private val homeAdapter by lazy {
-        val a = MovieDataHelper.getMarvelMCUMovieTimeOrderedList()
+        val a = MovieDataHelper.getMarvelMCUMovieTimeOrderedList(movieType)
+        for (movieItem in a) {
+            if (!movieItem.isHeader) {
+                val output =
+                    movieItem.year + "-" + movieItem.title + "(" + movieItem.originalTitle + ") \n"
+//                + "![](" + getPhoto(movieItem) + ") \n"
+                Log.d("Jay", output)
+            }
+
+        }
         MovieAdapter(a)
             .apply {
                 animationEnable = true
@@ -134,6 +168,17 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
 
 
             }
+    }
+
+    private fun getPhoto(movieItem: MovieItem): String {
+        var pic = ""
+        movieItem.photos?.forEach {
+            if(it.image?.endsWith(".jpg")!!){
+
+                return it.image!!
+            }
+        }
+        return pic
     }
 
     private fun initMCU() {

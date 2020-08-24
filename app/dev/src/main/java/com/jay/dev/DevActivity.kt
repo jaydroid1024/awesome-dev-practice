@@ -8,6 +8,8 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.jay.base_component.arouter.ARHelper
 import com.jay.base_component.arouter.ARPath
+import com.jay.base_component.constant.Constants
+import com.jay.base_lib.utils.L
 import com.jay.dev.databinding.ActivityDevBinding
 
 /**
@@ -35,26 +37,39 @@ class DevActivity : AppCompatActivity(), OnItemClickListener {
      * RV适配器
      */
     private val homeAdapter by lazy {
+        val mapParams = HashMap<String, Any>()
         HomeAdapter(homeItemData)
             .apply {
-            animationEnable = true
-            val top = layoutInflater.inflate(R.layout.top_view, binding.recyclerView, false)
-            addHeaderView(top)
-            setOnItemClickListener(this@DevActivity)
-        }
+                animationEnable = true
+                val top = layoutInflater.inflate(R.layout.top_view, binding.recyclerView, false)
+                addHeaderView(top)
+                setOnItemClickListener(this@DevActivity)
+            }
     }
 
     override fun onItemClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
         val item = adapter.data[position] as HomeEntity
         if (!item.isHeader) {
-            ARHelper.routerTo(item.activityPath)
+            if (!item.movieType.isNullOrEmpty()) {
+                val param = HashMap<String, Any>()
+                param[Constants.MapKey.TYPE] = item.movieType
+                ARHelper.routerTo(param, item.activityPath)
+                L.d("Jay", "item:$item")
+
+            } else {
+                ARHelper.routerTo(item.activityPath)
+            }
         }
     }
+
 
     private val homeItemData: ArrayList<HomeEntity>
         get() = arrayListOf(
             HomeEntity(headerTitle = "基本技能-计算机系统&网络知识体系"),
-            HomeEntity("电影", ARPath.PathMovie.MOVIE_ACTIVITY_PATH, R.mipmap.ic_bald),
+            HomeEntity("电影", ARPath.PathMovie.MOVIE_ACTIVITY_PATH, R.mipmap.ic_bald,"dfdfd"),
+            HomeEntity("电影1", ARPath.PathMovie.MOVIE_ACTIVITY_PATH, R.mipmap.ic_bald, "1"),
+            HomeEntity("电影2", ARPath.PathMovie.MOVIE_ACTIVITY_PATH, R.mipmap.ic_bald, "2"),
+            HomeEntity("电影3", ARPath.PathMovie.MOVIE_ACTIVITY_PATH, R.mipmap.ic_bald, "3"),
             HomeEntity("语音识别", ARPath.PathSpeech.MAIN_SPEECH_ACTIVITY_PATH, R.mipmap.ic_bald),
             HomeEntity("计算机", ARPath.PathDetail.DETAIL_ACTIVITY_PATH, R.mipmap.ic_bald),
             HomeEntity("操作系统", ARPath.PathDev.DEV_ACTIVITY_PATH, R.mipmap.ic_bald),

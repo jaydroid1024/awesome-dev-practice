@@ -1,6 +1,6 @@
 package com.jay.lib_kotlin
 
-import com.jay.biz_movie.data.MovieDataHelper
+import com.jay.lib_kotlin.data.MovieDataHelper
 
 
 fun main() {

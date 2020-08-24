@@ -1,6 +1,7 @@
 package com.jay.dev
 
 import com.chad.library.adapter.base.entity.SectionEntity
+import java.util.*
 
 /**
  * @author: limuyang
@@ -11,6 +12,9 @@ data class HomeEntity(
     val name: String = "",
     val activityPath: String = "",
     val imageResource: Int = 0,
-    val headerTitle: String = "") : SectionEntity {
+    val movieType: String = "1",
+    val mapParams: HashMap<String, Any> = HashMap<String, Any>(),
+    val headerTitle: String = ""
+) : SectionEntity {
     override val isHeader: Boolean get() = headerTitle.isNotBlank()
 }
