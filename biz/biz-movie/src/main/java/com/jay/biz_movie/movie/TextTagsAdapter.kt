@@ -1,4 +1,4 @@
-package com.jay.biz_movie.movie_douban
+package com.jay.biz_movie.movie
 
 import android.content.Context
 import android.util.Log

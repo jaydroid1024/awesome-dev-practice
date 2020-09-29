@@ -1,11 +1,14 @@
 package com.jay.biz_java;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class JavaMainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.jay.base_component.arouter.ARPath;
+
+@Route(path = ARPath.PathJava.JAVA_ACTIVITY_PATH)
+public class JavaMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

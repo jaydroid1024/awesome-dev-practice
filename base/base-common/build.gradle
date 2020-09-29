@@ -92,5 +92,7 @@ dependencies {
     //需要所有使用 ARouter 的 model 都添加依赖
     kapt rootProject.ext.arouterCompiler
 
+    api rootProject.ext.recyclerAdapterHelper
+
 }
 

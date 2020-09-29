@@ -1,31 +1,34 @@
-include ':lib:lib-xunfei-msc-jar'
-include ':lib:lib-xunfei'
-include ':base:base-speech'
-include ':biz:biz-movie'
 rootProject.name = 'awesome-dev-practice'
+
 /**
- * 有关组件化的一些信息请参考此项目：[WanDroid组件化](https://github.com/Jay-Droid/WanDroid)
+ * 有关组件化的一些信息请参考此项目：
+ * [WanDroid组件化](https://github.com/Jay-Droid/WanDroid)
  */
 include ':app:dev',
         ':app:app-detail',
         ':app:app-english',
         ':app:app-android',
         ':app:app-java',
-        ':app:app-template',
+        ':app:app-movie',
         ':app:app-kotlin'
 
 include ':biz:biz-detail',
         ':biz:biz-java',
         ':biz:biz-android',
         ':biz:biz-kotlin',
+        ':biz:biz-movie',
         ':biz:biz-english'
 
 include ':base:base-common',
         ':base:base-web',
+        ':base:base-speech',
         ':base:base-dev'
 
 include ':lib:lib-common',
         ':lib:lib-net',
         ':lib:lib-java',
         ':lib:lib-cpu-helper',
-        ':lib:lib-kotlin'
+        ':lib:lib-kotlin',
+        ':lib:lib-xunfei-msc-jar',
+        ':lib:lib-xunfei'
+

@@ -1,4 +1,4 @@
-package com.jay.biz_movie.movie_douban
+package com.jay.biz_movie.movie
 
 import android.content.Intent
 import android.os.Bundle
@@ -24,8 +24,8 @@ import com.jay.biz_movie.entity.MovieDetailsResponse
 import com.jay.biz_movie.entity.MovieItem
 import com.jay.biz_movie.entity.MovieListResponse
 import com.jay.biz_movie.marqueerecyclerview.LooperLayoutManager
-import com.jay.biz_movie.movie_douban.mvp.MovieContract
-import com.jay.biz_movie.movie_douban.mvp.MoviePresenter
+import com.jay.biz_movie.movie.mvp.MovieContract
+import com.jay.biz_movie.movie.mvp.MoviePresenter
 import com.moxun.tagcloudlib.view.TagCloudView
 
 
@@ -44,6 +44,15 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
 
     private var movieType: String = ""
 
+    private var zhiPic: String =
+        "https://tva1.sinaimg.cn/large/007S8ZIlly1gi59qjnd0ej30u00u0t9a.jpg"
+
+    private var jingPic: String =
+        "https://tva1.sinaimg.cn/large/007S8ZIlly1gi59rlqa4bj30u00u0t9e.jpg"
+
+    private var yuanPic: String =
+        "https://tva1.sinaimg.cn/large/007S8ZIlly1gi4m2wig3lj31410u0q5c.jpg"
+
     private val moviePic =
         "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p725871968.webp"
 
@@ -54,13 +63,13 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
         setContentView(binding.root)
         initIntent()
 
-//        initMovieList()
+        initMovieList()
 
 //        testData()
 
 //        initMCU()
 
-        goToSpeechPage()
+//        goToSpeechPage()
     }
 
     private fun initIntent() {
@@ -106,7 +115,7 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
         layoutManager.setLooperEnable(false)
         binding.recyclerView.layoutManager = layoutManagerNormal
         binding.recyclerView.adapter = homeAdapter
-        binding.recyclerView.setAutoRun(true)
+        binding.recyclerView.setAutoRun(false)
         binding.recyclerView.start()
     }
 
@@ -132,8 +141,9 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
 
                 val top1Img = top.findViewById<ImageView>(R.id.iv_top1)
                 val top2Img = top.findViewById<ImageView>(R.id.iv_top2)
-                top2Img.visibility = View.GONE
                 val top3Img = top.findViewById<ImageView>(R.id.iv_top3)
+                top2Img.visibility = View.GONE
+                top3Img.visibility = View.GONE
                 var tagCloudView = top.findViewById<TagCloudView>(R.id.tag_cloud)
                 val top1Pic =
                     "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597591248997&di=bbdd5132ec439bac3b29a41d16a6a7cb&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171105%2F84372d114505486487a790d5dec8adaf.jpeg"
@@ -155,9 +165,15 @@ class MovieActivity : BaseMVPActivity<MovieContract.View, MovieContract.Presente
                     .into(top3Img!!)
                 val arrayList = ArrayList<String>()
 
-                a.forEach {
-                    it.casts?.forEach {
-                        arrayList.add(it?.avatars?.medium ?: "")
+
+                a[a.size - 1].casts?.forEach {
+                    arrayList.add(it?.avatars?.medium ?: "")
+                }
+                arrayList.add(zhiPic)
+                arrayList.add(jingPic)
+                if (arrayList.size < 10) {
+                    for (i in (1..10 - arrayList.size)) {
+                        arrayList.add(yuanPic)
                     }
                 }
 

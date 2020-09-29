@@ -1,4 +1,4 @@
-package com.jay.dev
+package com.jay.base_component.widget.demolist
 
 import com.chad.library.adapter.base.entity.SectionEntity
 import java.util.*
@@ -8,7 +8,7 @@ import java.util.*
  * @date: 2019-12-06
  * @Description:
  */
-data class HomeEntity(
+data class DemoListEntity(
     val name: String = "",
     val activityPath: String = "",
     val imageResource: Int = 0,

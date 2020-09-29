@@ -1,4 +1,4 @@
-package com.jay.biz_movie.movie_douban.mvp
+package com.jay.biz_movie.movie.mvp
 
 import com.jay.base_component.base.mvp.BaseObserver
 import com.jay.base_component.base.mvp.BasePresenter

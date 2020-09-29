@@ -51,6 +51,24 @@ object ARPath {
 
     }
 
+    /**
+     * dev 主入口组件
+     */
+    object PathJava {
+
+        /**
+         * group name
+         */
+        private const val GROUP = "/java"
+
+        /**
+         * 主页面
+         */
+        const val JAVA_ACTIVITY_PATH = "$GROUP/java/main/activity"
+
+
+    }
+
 
     /**
      * dev 电影组件
@@ -68,9 +86,14 @@ object ARPath {
         const val MOVIE_ACTIVITY_PATH = "$GROUP/movie/movie/activity"
 
         /**
+         * 主页面
+         */
+        const val MOVIE_DETAIL_ACTIVITY_PATH = "$GROUP/movie/detail/activity"
+
+        /**
          * 测试页面
          */
-        const val TEST_ACTIVITY_PATH = "$GROUP/dev/test/activity"
+        const val DEMO_ACTIVITY_PATH = "$GROUP/movie/demo/activity"
 
     }
 

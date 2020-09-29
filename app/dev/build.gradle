@@ -94,9 +94,10 @@ dependencies {
     implementation project(path: ':base:base-speech')
 
     implementation project(path: ':biz:biz-movie')
+    
+    implementation project(path: ':biz:biz-java')
 
     implementation rootProject.ext.appcompat
-    implementation rootProject.ext.recyclerAdapterHelper
     implementation rootProject.ext.coreKtx
     testImplementation rootProject.ext.junit
     androidTestImplementation rootProject.ext.junitX

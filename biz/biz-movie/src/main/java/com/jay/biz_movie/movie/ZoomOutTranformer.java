@@ -1,10 +1,10 @@
-package com.jay.biz_movie.movie_douban;
+package com.jay.biz_movie.movie;
 
 import android.view.View;
 
-import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
-public class ZoomOutTranformer implements ViewPager.PageTransformer {
+public class ZoomOutTranformer implements ViewPager2.PageTransformer {
     private static final float MIN_ALPHA = 0.0f;    //最小透明度
 
     public void transformPage(View view, float position) {
