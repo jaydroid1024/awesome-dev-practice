@@ -11,6 +11,8 @@
     <style name="base_common_full_screen_style" parent="base_common_app_theme">
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/whitesmoke</item>
+
     </style>
 
 </resources>

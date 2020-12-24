@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+
+    <style name="card_label" parent="WrapWrap">
+        <item name="android:textColor">@color/card_label</item>
+        <item name="android:textSize">@dimen/card_label</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginStart">@dimen/card_label_margin_start</item>
+    </style>
+
+
+    <style name="card_text" parent="WrapWrap">
+        <item name="android:textColor">@color/card_text</item>
+        <item name="android:textSize">@dimen/card_text</item>
+<!--        <item name="android:textStyle">bold</item>-->
+    </style>
+
+</resources>

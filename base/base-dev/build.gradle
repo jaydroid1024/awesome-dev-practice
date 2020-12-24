@@ -69,11 +69,15 @@ android {
 }
 
 dependencies {
-
     /**
      * 公共业务组件
      */
-    api project(path: ':base:base-common')
+    implementation project(path: ':base:base-common')
+    implementation project(path: ':lib:lib-common')
+    //Arouter
+    implementation rootProject.ext.arouterApi
+    //需要所有使用 ARouter 的 model 都添加依赖
+    kapt rootProject.ext.arouterCompiler
 
 }
 

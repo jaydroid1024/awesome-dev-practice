@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -49,11 +50,22 @@ public class ImageTitleNumAdapter extends BannerAdapter<ActorsItem, ImageTitleNu
                 .apply(RequestOptions.bitmapTransform(new RoundedCorners(30)))
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.imageView);
+
+        Glide.with(holder.itemView)
+                .load(data.getActor_image())
+                .apply(RequestOptions.bitmapTransform(new RoundedCorners(20)))
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(holder.actor_image);
+
+
         holder.name.setText(data.getRole_name());
 
-        holder.niceName.setText(data.getRole_nickname());
+        if (data.getRole_nickname().isEmpty()) {
+            holder.niceName.setText(data.getActor_name());
+        } else {
+            holder.niceName.setText(data.getRole_nickname());
+        }
 
-        holder.niceName.setText(data.getRole_nickname());
         holder.dsc.setText(data.getRole_descr());
         //可以在布局文件中自己实现指示器，亦可以使用banner提供的方法自定义指示器，目前样式较少，后面补充
         holder.numIndicator.setText((position + 1) + "/" + size);
@@ -61,14 +73,17 @@ public class ImageTitleNumAdapter extends BannerAdapter<ActorsItem, ImageTitleNu
 
 
     class BannerViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
+        ImageView imageView, actor_image;
         TextView name;
         TextView niceName;
         TextView dsc;
         TextView numIndicator;
+        CardView cd_actor;
 
         public BannerViewHolder(@NonNull View view) {
             super(view);
+            cd_actor = view.findViewById(R.id.cd_actor);
+            actor_image = view.findViewById(R.id.image_actor);
             imageView = view.findViewById(R.id.image);
             name = view.findViewById(R.id.tv_name);
             niceName = view.findViewById(R.id.tv_nickname);

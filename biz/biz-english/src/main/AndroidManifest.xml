@@ -3,7 +3,11 @@
     package="com.jay.biz_english">
 
     <application>
-        <activity android:name=".EnglishActivity"></activity>
+        <activity android:name=".letter_26.LetterActivity" />
+        <activity android:name=".phonetic_48.PhoneticActivity" />
+        <activity android:name=".phonetic_48.PhoneticListActivity" />
+        <activity android:name=".phonetic_48.PhoneticDetailActivity" />
+        <activity android:name=".EnglishMainActivity" />
     </application>
 
 </manifest>

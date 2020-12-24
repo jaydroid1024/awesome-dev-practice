@@ -30,8 +30,33 @@ fun main() {
     map.put("3", "sssss")
     listMap.add(map)
 
-    println(Gson().toJson(listMap))
+//    println(Gson().toJson(listMap))
 
+    testMap()
+
+}
+
+fun testMap() {
+
+    val listMap = ArrayList<Map<Int, ArrayList<String>>>()
+
+    val map = HashMap<Int, ArrayList<String>>()
+    val list = ArrayList<String>()
+    list.add("11:00-12:00")
+    list.add("12:00-13:00")
+    list.add("13:00-14:00")
+
+    map.put(0, list)
+    map.put(1, list)
+    map.put(2, list)
+
+    listMap.add(map)
+
+    listMap.add(map)
+    listMap.add(map)
+    listMap.add(map)
+
+    println(Gson().toJson(listMap))
 }
 
 data class Item(var a: String? = null, var b: String? = null) {

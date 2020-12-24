@@ -1,0 +1,8 @@
+apply from: "../../buildgradle/biz.gradle"
+apply plugin: 'kotlin-android'
+
+
+dependencies {
+    implementation project(path: ':base:base-dev')
+    implementation rootProject.ext.recyclerAdapterHelper
+}

@@ -1,0 +1,8 @@
+apply from: "../../buildgradle/app.gradle"
+
+dependencies {
+
+    implementation project(path: ':base:base-dev')
+    implementation project(path: ':biz:biz-mvvm')
+
+}

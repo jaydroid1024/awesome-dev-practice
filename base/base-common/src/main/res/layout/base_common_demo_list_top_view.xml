@@ -15,16 +15,49 @@
         card_view:cardElevation="3dp"
         card_view:cardUseCompatPadding="true">
 
-        <TextView
-            android:id="@+id/tv_top"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_top"
+            android:background="@color/text_movie"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@mipmap/banner_bald"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:src="@mipmap/banner_bald"
-            android:textSize="80sp"
-            tools:text="电影" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintBottom_toTopOf="@+id/tv_top_content"
+                android:gravity="center"
+                android:src="@mipmap/banner_bald"
+                android:textColor="@color/white"
+                android:textSize="60sp"
+                tools:text="电影" />
+
+            <TextView
+                android:id="@+id/tv_top_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:layout_constraintTop_toBottomOf="@+id/tv_top"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="center"
+                android:visibility="gone"
+                tools:visibility="gone"
+                android:src="@mipmap/banner_bald"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="一个怀揣好奇，认真聆听世界的码仔，主要分享：语言学习、音乐、声音、优质音视频安利等内容" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.cardview.widget.CardView>
 

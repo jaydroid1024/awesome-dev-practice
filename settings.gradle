@@ -1,22 +1,34 @@
+include ':biz:biz-mvvm'
+include ':app:app-mvvm'
+include ':biz:biz-jetpack'
+include ':app:app-jetpack'
 rootProject.name = 'awesome-dev-practice'
 
 /**
  * 有关组件化的一些信息请参考此项目：
  * [WanDroid组件化](https://github.com/Jay-Droid/WanDroid)
  */
-include ':app:dev',
-        ':app:app-detail',
-        ':app:app-english',
-        ':app:app-android',
-        ':app:app-java',
-        ':app:app-movie',
-        ':app:app-kotlin'
+//include   ':app:app-card'
+//include ':app:app-map'
+
+//include ':app:dev',
+//        ':app:app-detail',
+//        ':app:app-english',
+//        ':app:app-android',
+//        ':app:app-java',
+//        ':app:app-movie',
+//           ':app:app-card',
+//        ':app:app-pattern',
+//        ':app:app-kotlin'
 
 include ':biz:biz-detail',
         ':biz:biz-java',
         ':biz:biz-android',
         ':biz:biz-kotlin',
         ':biz:biz-movie',
+        ':biz:biz-map',
+        ':biz:biz-card',
+        ':biz:biz-pattern',
         ':biz:biz-english'
 
 include ':base:base-common',
@@ -29,6 +41,7 @@ include ':lib:lib-common',
         ':lib:lib-java',
         ':lib:lib-cpu-helper',
         ':lib:lib-kotlin',
+        ':lib:lib-pattern',
         ':lib:lib-xunfei-msc-jar',
         ':lib:lib-xunfei'
 

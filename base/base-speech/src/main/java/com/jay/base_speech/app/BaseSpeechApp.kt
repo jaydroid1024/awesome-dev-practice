@@ -4,10 +4,12 @@ import android.app.Application
 import android.content.Context
 import android.content.res.Configuration
 import android.util.Log
+import com.danikula.videocache.HttpProxyCacheServer
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
 import com.iflytek.mscv5plusdemo.SpeechApp
 import com.jay.base_lib.app.appdelegate.IAppLife
 import com.jay.base_lib.app.appdelegate.PriorityLevel
+import com.jay.base_speech.speech.SpeechHelper
 
 /**
  * BaseApp,反射调用
@@ -17,7 +19,10 @@ import com.jay.base_lib.app.appdelegate.PriorityLevel
  * @date 2019-10-15 10:57
  */
 class BaseSpeechApp : IAppLife {
+
     private lateinit var cookieJar: PersistentCookieJar
+    private var proxy: HttpProxyCacheServer? = null
+
     override fun attachBaseContext(base: Context) {
         Log.d(TAG, "attachBaseContext")
 
@@ -28,7 +33,18 @@ class BaseSpeechApp : IAppLife {
         app = application
         instance = this
         SpeechApp.onCreate(app)
+        SpeechHelper.initSpeech()
+    }
 
+    fun getProxy(): HttpProxyCacheServer? {
+        proxy = newProxy()
+        return proxy
+    }
+
+    private fun newProxy(): HttpProxyCacheServer {
+        return HttpProxyCacheServer.Builder(getApp())
+            .maxCacheSize(1024 * 1024 * 1024)       // 1 Gb for cache
+            .build()
     }
 
 

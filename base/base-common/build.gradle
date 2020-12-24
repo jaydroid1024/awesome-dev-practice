@@ -69,30 +69,29 @@ android {
 dependencies {
 
 
-    api fileTree(include: ['*.jar'], dir: 'libs')
-    api rootProject.ext.kotlinStdlibJdk8
-    api rootProject.ext.appcompat
-    api rootProject.ext.coreKtx
-    api rootProject.ext.constraintLayout
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.kotlinStdlibJdk8
+    implementation rootProject.ext.appcompat
+    implementation rootProject.ext.coreKtx
+    implementation rootProject.ext.constraintLayout
     testImplementation rootProject.ext.junit
     androidTestImplementation rootProject.ext.junitX
     androidTestImplementation rootProject.ext.espressoCore
 
     //基础功能组件
-    api project(path: ':lib:lib-common')
+    implementation project(path: ':lib:lib-common')
     
     //persistentcookiejar
-    api rootProject.ext.persistentcookiejar
+    implementation rootProject.ext.persistentcookiejar
     //statusbarUtil
-    api rootProject.ext.statusbarUtil
-    //eventbus
-    api rootProject.ext.eventbus
+    implementation rootProject.ext.statusbarUtil
+    implementation rootProject.ext.eventbus
     //Arouter
-    api rootProject.ext.arouterApi
+    implementation rootProject.ext.arouterApi
     //需要所有使用 ARouter 的 model 都添加依赖
     kapt rootProject.ext.arouterCompiler
 
-    api rootProject.ext.recyclerAdapterHelper
+    implementation  rootProject.ext.recyclerAdapterHelper
 
 }
 

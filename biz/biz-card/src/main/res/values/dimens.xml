@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+    <!-- Your custom size defind by references, can be writted in anywhere, any module, any values/*.xml, for example: -->
+    <dimen name="card_label_margin_start">60dp</dimen>
+    <dimen name="card_label">10sp</dimen>
+    <dimen name="card_text">12sp</dimen>
+
+</resources>

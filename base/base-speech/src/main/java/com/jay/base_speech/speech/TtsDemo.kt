@@ -348,6 +348,7 @@ class TtsDemo : Activity(), View.OnClickListener {
                 mPercentForBuffering, mPercentForPlaying
             )
 
+            //todo
             if(mPercentForPlaying >= 97){
                 this@TtsDemo.finish()
             }

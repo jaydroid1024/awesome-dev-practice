@@ -26,12 +26,14 @@ class DevMainActivity : AppCompatActivity() {
         binding = ActivityDevBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.dvDemo.setDemoListData(homeItemData)
+        binding.dvDemo.setTopText("猿舌技术", "如果你拥有很多把锤子，那么任何东西都可以是钉子。")
+
     }
 
     private val homeItemData: ArrayList<DemoListEntity>
         get() = arrayListOf(
             DemoListEntity(headerTitle = "基本技能-计算机系统&网络知识体系"),
-            DemoListEntity("电影", ARPath.PathMovie.DEMO_ACTIVITY_PATH, R.mipmap.ic_bald, "dfdfd"),
+            DemoListEntity("猿舌音语", ARPath.PathEnglish.ENGLISH_ACTIVITY_PATH),
             DemoListEntity("电影详情", ARPath.PathJava.JAVA_ACTIVITY_PATH, R.mipmap.ic_bald, "1"),
             DemoListEntity("电影2", ARPath.PathMovie.MOVIE_ACTIVITY_PATH, R.mipmap.ic_bald, "2"),
             DemoListEntity("电影3", ARPath.PathMovie.MOVIE_ACTIVITY_PATH, R.mipmap.ic_bald, "3"),
@@ -42,7 +44,7 @@ class DevMainActivity : AppCompatActivity() {
 
             DemoListEntity(headerTitle = "内功心法-算法与思想知识体系"),
             DemoListEntity("算法", ARPath.PathDev.DEV_ACTIVITY_PATH, R.mipmap.ic_bald),
-            DemoListEntity("设计模式", ARPath.PathDev.DEV_ACTIVITY_PATH, R.mipmap.ic_bald),
+            DemoListEntity("设计模式", ARPath.PathPattern.PATTERN_ACTIVITY_PATH),
             DemoListEntity("架构思想", ARPath.PathDev.DEV_ACTIVITY_PATH, R.mipmap.ic_bald),
 
             DemoListEntity(headerTitle = "必修之技-Java知识体系"),

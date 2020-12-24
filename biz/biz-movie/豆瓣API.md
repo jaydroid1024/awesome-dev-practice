@@ -79,7 +79,9 @@ https://api.douban.com/v2/movie/search?q=张艺谋&apikey=0df993c66c0c636e29ecbb
 
 
 ### 获取影人条目信息
-https://api.douban.com/v2/movie/celebrity/1047973?apikey=0df993c66c0c636e29ecbb5344252a4a
+0df993c66c0c636e29ecbb5344252a4a
+0b2bdeda43b5688921839c8ecb20399b
+https://api.douban.com/v2/movie/celebrity/3543690?apikey=0b2bdeda43b5688921839c8ecb20399b
 
 ### 获取影人作品
 https://api.douban.com/v2/movie/celebrity/1044707/works?apikey=0b2bdeda43b5688921839c8ecb20399b
@@ -154,7 +156,7 @@ https://movie.douban.com/j/subject_abstract?subject_id=4917832
 
 
 
-
+https://movie.douban.com/j/subject_abstract?subject_id=4917832
 
 
 

@@ -12,6 +12,9 @@ android {
     viewBinding {
         enabled = true
     }
+    dataBinding {
+        enabled = true
+    }
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
@@ -37,17 +40,53 @@ android {
         multiDexEnabled true
 
     }
-    buildTypes {
-        debug {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
 
+    signingConfigs {
+
+        debug {
+            keyAlias rootProject.ext.sign["aliasDebug"]
+            keyPassword rootProject.ext.sign["passDebug"]
+            storeFile rootProject.ext.sign["storeDebug"]
+            storePassword rootProject.ext.sign["storePassDebug"]
+        }
         release {
-            minifyEnabled false
-            shrinkResources false
+            keyAlias rootProject.ext.sign["alias"]
+            keyPassword rootProject.ext.sign["pass"]
+            storeFile rootProject.ext.sign["store"]
+            storePassword rootProject.ext.sign["storePass"]
+        }
+    }
+
+    buildTypes {
+        //打包命令：
+        // ./gradlew :app:wan:assembleDebug
+        // ./gradlew :app:wan:assembleRelease
+
+        debug {
+            // Zipalign优化 true
             zipAlignEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // 移除无用的resource文件 true
+            shrinkResources false
+            // 启用Android插件压缩器
+            // useProguard true
+            // 代码压缩/是否进行混淆 true
+            minifyEnabled false
+            // 签名信息
+            signingConfig signingConfigs.debug
+            // 前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明,后一部分是我们项目里的自定义的混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+        }
+        release {
+            // Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            // 代码压缩/是否进行混淆
+            minifyEnabled true
+            // 签名信息
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -68,11 +107,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation rootProject.ext.kotlinStdlibJdk8
     implementation rootProject.ext.appcompat
     implementation rootProject.ext.coreKtx
-    //需要所有使用 ARouter 的组件都添加依赖
-    implementation rootProject.ext.arouterApi
-    kapt rootProject.ext.arouterCompiler
+
 
 }

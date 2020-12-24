@@ -293,6 +293,153 @@ object ARPath {
          */
         const val ENGLISH_ACTIVITY_PATH = "$GROUP/en/main/activity"
 
+        /**
+         * 音标
+         */
+        const val PHONETIC_ACTIVITY_PATH = "$GROUP/en/phonetic/activity"
+
+        /**
+         * 音标列表
+         */
+        const val PHONETIC_LIST_ACTIVITY_PATH = "$GROUP/en/phonetic/list/activity"
+
+        /**
+         * 字幕
+         */
+        const val LETTER_ACTIVITY_PATH = "$GROUP/en/letter/activity"
+
+
+    }
+
+    /**
+     * group 组件
+     */
+    object PathPattern {
+
+        /**
+         * group name
+         */
+        private const val GROUP = "/pattern"
+
+        /**
+         * 页面主组件
+         */
+        const val PATTERN_ACTIVITY_PATH = "${GROUP}/pattern/main/activity"
+
+        /**
+         * 列表
+         */
+        const val PATTERN_LIST_ACTIVITY_PATH = "${GROUP}/pattern/pattern/list/activity"
+
+
+    }
+
+
+    /**
+     * group 组件
+     */
+    object PathCard {
+
+        /**
+         * group name
+         */
+        private const val GROUP = "/card"
+
+        /**
+         * 页面主组件
+         */
+        const val CARD_ACTIVITY_PATH = "${GROUP}/card/main/activity"
+
+        /**
+         * id
+         */
+        const val CARD_ID_ACTIVITY_PATH = "${GROUP}/card/id/activity"
+
+        /**
+         * 识别
+         */
+        const val CARD_RECOGNITION_ACTIVITY_PATH = "${GROUP}/card/recognition/activity"
+
+
+    }
+
+
+    /**
+     * group 组件
+     */
+    object PathMap {
+
+        /**
+         * group name
+         */
+        private const val GROUP = "/map"
+
+
+        /**
+         * 组件主页面
+         */
+        const val MAP_ACTIVITY_PATH = "${GROUP}/map/main/activity"
+
+
+        /**
+         * 百度
+         */
+        const val BAIDU_MAP_ACTIVITY_PATH = "${GROUP}/map/baidu/activity"
+
+
+        /**
+         * 高德
+         */
+        const val GAODE_MAP_ACTIVITY_PATH = "${GROUP}/map/gaode/activity"
+
+
+    }
+
+    /**
+     * group 组件
+     */
+    object PathMVVM {
+
+        /**
+         * group name
+         */
+        private const val GROUP = "/mvvp"
+
+
+        /**
+         * 组件主页面
+         */
+        const val MVVM_ACTIVITY_PATH = "${GROUP}/mvvm/main/activity"
+
+
+        /**
+         * 数据绑定页面
+         */
+        const val BIND_ACTIVITY_PATH = "${GROUP}/mvvm/databinding/activity"
+
+    }
+
+    /**
+     * group 组件
+     */
+    object PathJetPack {
+
+        /**
+         * group name
+         */
+        private const val GROUP = "/jetpack"
+
+
+        /**
+         * 组件主页面
+         */
+        const val JET_PACK_MAIN_ACTIVITY_PATH = "${GROUP}/jetpack/main/activity"
+
+
+        /**
+         * 数据绑定页面
+         */
+        const val DATA_BINDING_ACTIVITY_PATH = "${GROUP}/jetpack/databinding/activity"
 
     }
 

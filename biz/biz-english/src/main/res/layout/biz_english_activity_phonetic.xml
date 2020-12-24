@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_movie"
+    tools:context=".phonetic_48.PhoneticActivity">
+
+
+    <com.moxun.tagcloudlib.view.TagCloudView
+        android:id="@+id/tag_cloud"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:visibility="visible"
+        app:autoScrollMode="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/ll_v"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1"
+        app:radiusPercent="0.6"
+        app:scrollSpeed="3" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_v"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tag_cloud"
+        app:layout_constraintVertical_weight="1">
+
+
+
+
+        <!--        line-->
+        <com.hanks.htextview.line.LineTextView
+            android:id="@+id/htv_title_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/text_movie"
+            android:text="一天掌握一个音标"
+            app:lineColor="@color/white"
+            app:lineWidth="3dp"
+            android:visibility="gone"
+            android:gravity="center"
+            android:textSize="48sp" />
+
+
+        <!--        rainbow-->
+        <com.hanks.htextview.rainbow.RainbowTextView
+            android:id="@+id/htv_title_rainbow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="一天掌握一个音标"
+            android:textSize="48sp"
+            app:colorSpace="150dp"
+            app:colorSpeed="10dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_c"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/base_common_bg_circle_dark_radius_yellow"
+                android:gravity="center"
+                android:text="辅音"
+                android:textColor="@color/text_movie"
+                android:textSize="28sp" />
+        </LinearLayout>
+
+
+
+<!--        &lt;!&ndash;        scale (single line)&ndash;&gt;-->
+<!--        <com.hanks.htextview.scale.ScaleTextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="this is init sentence"-->
+<!--            android:textSize="16sp" />-->
+
+<!--        &lt;!&ndash;        evaporate (single line)&ndash;&gt;-->
+<!--        <com.hanks.htextview.evaporate.EvaporateTextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:gravity="center"-->
+<!--            android:paddingTop="8dp"-->
+<!--            android:text="this is init sentence"-->
+<!--            android:textSize="20sp" />-->
+
+<!--        &lt;!&ndash;        fall (single line)&ndash;&gt;-->
+<!--        <com.hanks.htextview.fall.FallTextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingBottom="20dp"-->
+<!--            android:text="this is init sentence"-->
+<!--            android:textSize="16sp" />-->
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

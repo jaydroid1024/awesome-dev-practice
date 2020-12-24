@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="base_dev_AppTheme" parent="base_common_app_theme">
+    <style name="base_dev_AppTheme" parent="base_common_full_screen_style">
 
     </style>
 

@@ -10,7 +10,7 @@
         tools:replace="android:label">
 
         <activity
-            android:name="com.jay.biz_english.EnglishActivity"
+            android:name="com.jay.biz_english.EnglishMainActivity"
             android:theme="@style/base_common_app_theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

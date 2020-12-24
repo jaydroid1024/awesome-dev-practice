@@ -12,6 +12,10 @@ android {
     viewBinding {
         enabled = true
     }
+    // Android Plugin for Gradle 1.5.0+
+    dataBinding {
+        enabled true
+    }
     //给 Module 内的资源名增加前缀, 避免资源名冲突
     resourcePrefix "${project.name.toLowerCase().replaceAll("-", "_")}_"
 
@@ -74,8 +78,12 @@ dependencies {
     androidTestImplementation rootProject.ext.junitX
     androidTestImplementation rootProject.ext.espressoCore
     implementation rootProject.ext.constraintLayout
+
     implementation project(path: ':base:base-common')
     //需要所有使用 ARouter 的组件都添加依赖
     kapt rootProject.ext.arouterCompiler
+    //Arouter
+    implementation rootProject.ext.arouterApi
+    implementation rootProject.ext.recyclerAdapterHelper
 
 }

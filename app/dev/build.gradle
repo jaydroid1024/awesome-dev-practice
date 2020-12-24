@@ -91,10 +91,12 @@ dependencies {
 
     implementation project(path: ':base:base-web')
 
-    implementation project(path: ':base:base-speech')
-
     implementation project(path: ':biz:biz-movie')
-    
+
+    implementation project(path: ':biz:biz-english')
+
+    implementation project(path: ':biz:biz-pattern')
+
     implementation project(path: ':biz:biz-java')
 
     implementation rootProject.ext.appcompat
@@ -104,6 +106,12 @@ dependencies {
     androidTestImplementation rootProject.ext.espressoCore
     //需要所有使用 ARouter 的组件都添加依赖
     kapt rootProject.ext.arouterCompiler
+
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:3.2.0'
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit-leakcanary:3.2.0'
+
+    releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:3.2.0'
+
 
 
 
