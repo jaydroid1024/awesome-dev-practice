@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
 
         <variable
-            name="observableFieldUser"
-            type="com.jay.biz_jetpack.databinding.data.ObservableFieldUser" />
-
-        <variable
-            name="observableUser"
-            type="com.jay.biz_jetpack.databinding.data.ObservableUser" />
+            name="userViewModelLiveData"
+            type="com.jay.biz_jetpack.databinding.data.UserViewModelLiveData" />
     </data>
 
     <LinearLayout
@@ -20,7 +17,7 @@
         android:padding="20dp">
 
         <TextView
-            android:id="@+id/tv_label"
+            android:id="@+id/tv_label_view_model"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="bindViewWithDataBinding"
@@ -29,14 +26,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{observableFieldUser.firstName + observableFieldUser.lastName}"
+            android:text="@{userViewModelLiveData.firstName}"
             android:textSize="33sp"
             tools:text="firstName" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{observableUser.firstName + observableUser.lastName}"
+            android:text="@{userViewModelLiveData.currentName}"
             android:textSize="33sp"
             tools:text="lastName" />
     </LinearLayout>

@@ -6,6 +6,8 @@
         <activity android:name="com.jay.biz_jetpack.databinding.DataBindingMainActivity"/>
         <activity android:name="com.jay.biz_jetpack.databinding.DBCommonUseActivity"/>
         <activity android:name="com.jay.biz_jetpack.databinding.DBObservableActivity"/>
+        <activity android:name="com.jay.biz_jetpack.databinding.DBViewModelActivity"/>
+        <activity android:name="com.jay.biz_jetpack.databinding.DBLiveDataActivity"/>
         <activity android:name="com.jay.biz_jetpack.JetPackMainActivity" />
     </application>
 

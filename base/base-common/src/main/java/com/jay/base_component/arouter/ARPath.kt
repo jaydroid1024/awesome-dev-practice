@@ -451,6 +451,16 @@ object ARPath {
          */
         const val DATA_BINDING_OBSERVABLE_ACTIVITY_PATH = "${GROUP}/jetpack/databinding/observable/activity"
 
+        /**
+         * 数据绑定页面
+         */
+        const val DATA_BINDING_VIEW_MODEL_ACTIVITY_PATH = "${GROUP}/jetpack/databinding/viewnodel/activity"
+
+        /**
+         * 数据绑定页面
+         */
+        const val DATA_BINDING_LIVE_DATA_ACTIVITY_PATH = "${GROUP}/jetpack/databinding/livedata/activity"
+
     }
 
 

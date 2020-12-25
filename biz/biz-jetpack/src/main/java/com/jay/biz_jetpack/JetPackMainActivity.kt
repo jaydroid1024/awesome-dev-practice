@@ -17,7 +17,7 @@ class JetPackMainActivity : AppCompatActivity() {
         setContentView(R.layout.biz_jetpack_activity_jetpack_main)
         setDemoList()
         //todo
-        ARHelper.routerTo(ARPath.PathJetPack.DATA_BINDING_ACTIVITY_PATH)
+//        ARHelper.routerTo(ARPath.PathJetPack.DATA_BINDING_VIEW_MODEL_ACTIVITY_PATH)
     }
 
     private fun setDemoList() {
