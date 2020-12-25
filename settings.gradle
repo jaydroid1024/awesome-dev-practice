@@ -1,5 +1,5 @@
-include ':biz:biz-mvvm'
-include ':app:app-mvvm'
+//include ':biz:biz-mvvm'
+//include ':app:app-mvvm'
 include ':biz:biz-jetpack'
 include ':app:app-jetpack'
 rootProject.name = 'awesome-dev-practice'
@@ -21,15 +21,15 @@ rootProject.name = 'awesome-dev-practice'
 //        ':app:app-pattern',
 //        ':app:app-kotlin'
 
-include ':biz:biz-detail',
-        ':biz:biz-java',
-        ':biz:biz-android',
-        ':biz:biz-kotlin',
-        ':biz:biz-movie',
-        ':biz:biz-map',
-        ':biz:biz-card',
-        ':biz:biz-pattern',
-        ':biz:biz-english'
+//include ':biz:biz-detail',
+//        ':biz:biz-java',
+//        ':biz:biz-android',
+//        ':biz:biz-kotlin',
+//        ':biz:biz-movie',
+//        ':biz:biz-map',
+//        ':biz:biz-card',
+//        ':biz:biz-pattern',
+//        ':biz:biz-english'
 
 include ':base:base-common',
         ':base:base-web',

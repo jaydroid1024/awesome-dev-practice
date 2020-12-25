@@ -7,18 +7,12 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.jay.base_component.arouter.ARPath
 import com.jay.biz_jetpack.R
 
-@Route(path =  ARPath.PathJetPack.DATA_BINDING_ACTIVITY_PATH)
-class DataBindingActivity : AppCompatActivity() {
+@Route(path = ARPath.PathJetPack.DATA_BINDING_OBSERVABLE_ACTIVITY_PATH)
+class DBObservableActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.biz_jetpack_activity_data_binding)
-        bindViewWithFind()
+        setContentView(R.layout.biz_jetpack_activity_data_binding_observabe)
     }
 
-    private fun bindViewWithFind() {
-        findViewById<TextView>(R.id.tv_text).apply {
-            text = "bindViewWithFind"
-        }
 
-    }
 }
