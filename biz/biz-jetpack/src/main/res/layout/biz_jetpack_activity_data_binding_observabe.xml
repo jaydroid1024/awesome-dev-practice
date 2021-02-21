@@ -5,11 +5,11 @@
 
         <variable
             name="observableFieldUser"
-            type="com.jay.biz_jetpack.databinding.data.ObservableFieldUser" />
+            type="com.jay.biz_mvvm.databinding.data.ObservableFieldUser" />
 
         <variable
             name="observableUser"
-            type="com.jay.biz_jetpack.databinding.data.ObservableUser" />
+            type="com.jay.biz_mvvm.databinding.data.ObservableUser" />
     </data>
 
     <LinearLayout

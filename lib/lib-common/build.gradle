@@ -6,12 +6,14 @@ dependencies {
      * 网络
      */
     api project(path: ':lib:lib-net')
+    api project(path: ':lib:lib-app')
 
     //logger
     api rootProject.ext.logger
 
     //glide
     api rootProject.ext.glide
+    api rootProject.ext.gson
 
 }
 

@@ -10,10 +10,10 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
-import android.widget.EditText
+import androidx.appcompat.widget.AppCompatEditText
 import com.jay.base_component.R
 
-class ClearEditText : EditText, TextWatcher, View.OnFocusChangeListener {
+class ClearEditText : AppCompatEditText, TextWatcher, View.OnFocusChangeListener {
 
     private var tipDrawable: Drawable? = null
     private var clearDrawable: Drawable? = null

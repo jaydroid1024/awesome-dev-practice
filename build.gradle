@@ -1,6 +1,9 @@
 buildscript {
     //使用config.gradle统一管理项目的依赖库
     apply from: "buildgradle/config.gradle"
+    ext {
+        kotlin_version = '1.4.10'
+    }
 
     repositories {
         google()
@@ -13,6 +16,8 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$buildGradleVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        //di-hilt
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.28-alpha'
     }
 }
 

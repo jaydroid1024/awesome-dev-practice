@@ -1,7 +1,8 @@
+//include ':lib:lib-persistence'
 //include ':biz:biz-mvvm'
 //include ':app:app-mvvm'
-include ':biz:biz-jetpack'
-include ':app:app-jetpack'
+//include ':biz:biz-jetpack'
+//include ':app:app-jetpack'
 rootProject.name = 'awesome-dev-practice'
 
 /**
@@ -11,37 +12,42 @@ rootProject.name = 'awesome-dev-practice'
 //include   ':app:app-card'
 //include ':app:app-map'
 
-//include ':app:dev',
+//include ':app:dev'
+
+include ':app:app-kotlin',
 //        ':app:app-detail',
 //        ':app:app-english',
-//        ':app:app-android',
-//        ':app:app-java',
+        ':app:app-android',
+//        ':app:app-dev',
 //        ':app:app-movie',
-//           ':app:app-card',
+//        ':app:app-card',
 //        ':app:app-pattern',
-//        ':app:app-kotlin'
+        ':app:app-java'
 
-//include ':biz:biz-detail',
-//        ':biz:biz-java',
-//        ':biz:biz-android',
-//        ':biz:biz-kotlin',
+include ':biz:biz-kotlin',
+//        ':biz:biz-detail',
+        ':biz:biz-android',
 //        ':biz:biz-movie',
 //        ':biz:biz-map',
 //        ':biz:biz-card',
 //        ':biz:biz-pattern',
-//        ':biz:biz-english'
+//        ':biz:biz-english',
+        ':biz:biz-java'
 
-include ':base:base-common',
-        ':base:base-web',
-        ':base:base-speech',
-        ':base:base-dev'
+include ':base:base-dev',
+        ':base:base-common',
+        ':base:base-web'
+//        ':base:base-speech',
+
 
 include ':lib:lib-common',
         ':lib:lib-net',
-        ':lib:lib-java',
-        ':lib:lib-cpu-helper',
+        ':lib:lib-app',
+//        ':lib:lib-cpu-helper',
         ':lib:lib-kotlin',
-        ':lib:lib-pattern',
-        ':lib:lib-xunfei-msc-jar',
-        ':lib:lib-xunfei'
+        ':lib:lib-algorithm',
+//        ':lib:lib-pattern',
+//        ':lib:lib-xunfei-msc-jar',
+//        ':lib:lib-xunfei',
+        ':lib:lib-java'
 

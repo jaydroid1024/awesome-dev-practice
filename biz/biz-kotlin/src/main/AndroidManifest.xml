@@ -3,7 +3,9 @@
     package="com.jay.biz_kotlin">
 
     <application>
-        <activity android:name=".KotlinMainActivity"></activity>
+        <activity android:name=".KotlinMainActivity" />
+        <activity android:name=".coroutine.CoroutineMainActivity" />
+        <activity android:name=".coroutine.CoroutineUseActivity" />
     </application>
 
 </manifest>

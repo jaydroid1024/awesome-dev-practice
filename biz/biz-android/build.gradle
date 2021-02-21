@@ -1,9 +1,12 @@
 apply from: "../../buildgradle/biz.gradle"
+apply plugin: 'kotlin-android'
 
 
 dependencies {
 
     implementation project(path: ':base:base-dev')
-    implementation project(path: ':lib:lib-cpu-helper')
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation rootProject.ext.recyclerAdapterHelper
 }

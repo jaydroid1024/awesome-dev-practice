@@ -1,0 +1,1780 @@
+{
+  "msg": "OK",
+  "code": 0,
+  "data": {
+    "showExt": true,
+    "difficultyArray": [
+      {
+        "count": 7,
+        "id": 1,
+        "title": "入门"
+      },
+      {
+        "count": 51,
+        "id": 2,
+        "title": "简单"
+      },
+      {
+        "count": 81,
+        "id": 3,
+        "title": "中等"
+      },
+      {
+        "count": 18,
+        "id": 4,
+        "title": "较难"
+      },
+      {
+        "count": 1,
+        "id": 5,
+        "title": "困难"
+      }
+    ],
+    "totalPage": 1,
+    "questions": [
+      {
+        "tpId": 117,
+        "questionId": 23286,
+        "questionTitle": "反转链表",
+        "questionNo": "NC78",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "客户端",
+            "id": 4
+          },
+          {
+            "name": "算法",
+            "id": 1
+          },
+          {
+            "name": "前端",
+            "id": 3
+          },
+          {
+            "name": "测试",
+            "id": 2
+          }
+        ],
+        "isNew": false,
+        "tqId": 37777,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          }
+        ],
+        "difficulty": 2,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 6,
+        "ranks": "",
+        "acceptRate": 31.1573,
+        "companys": [
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "腾讯",
+            "id": 138
+          },
+          {
+            "name": "百度",
+            "id": 139
+          },
+          {
+            "name": "小米",
+            "id": 147
+          },
+          {
+            "name": "美团",
+            "id": 179
+          },
+          {
+            "name": "滴滴",
+            "id": 652
+          },
+          {
+            "name": "shopee",
+            "id": 1049
+          },
+          {
+            "name": "网易",
+            "id": 149
+          },
+          {
+            "name": "猿辅导",
+            "id": 758
+          },
+          {
+            "name": "京东",
+            "id": 151
+          },
+          {
+            "name": "中兴",
+            "id": 664
+          },
+          {
+            "name": "阿里巴巴",
+            "id": 134
+          },
+          {
+            "name": "昆仑万维",
+            "id": 183
+          },
+          {
+            "name": "BIGO",
+            "id": 1019
+          },
+          {
+            "name": "招银网络",
+            "id": 914
+          },
+          {
+            "name": "深信服",
+            "id": 711
+          },
+          {
+            "name": "微软",
+            "id": 146
+          },
+          {
+            "name": "携程",
+            "id": 153
+          },
+          {
+            "name": "亚信",
+            "id": 706
+          },
+          {
+            "name": "映客",
+            "id": 1228
+          },
+          {
+            "name": "华为",
+            "id": 239
+          },
+          {
+            "name": "同盾科技",
+            "id": 4748
+          },
+          {
+            "name": "奇安信",
+            "id": 2227
+          },
+          {
+            "name": "拼多多",
+            "id": 732
+          },
+          {
+            "name": "英特尔",
+            "id": 650
+          },
+          {
+            "name": "瓜子二手车",
+            "id": 915
+          },
+          {
+            "name": "vivo",
+            "id": 889
+          },
+          {
+            "name": "哔哩哔哩",
+            "id": 935
+          },
+          {
+            "name": "SmartX",
+            "id": 2815
+          },
+          {
+            "name": "作业帮",
+            "id": 893
+          },
+          {
+            "name": "微博",
+            "id": 142
+          },
+          {
+            "name": "去哪儿",
+            "id": 141
+          },
+          {
+            "name": "绿湾科技",
+            "id": 1128
+          },
+          {
+            "name": "同程艺龙",
+            "id": 779
+          },
+          {
+            "name": "斯伦贝谢",
+            "id": 1639
+          },
+          {
+            "name": "早稻科技",
+            "id": 6932
+          },
+          {
+            "name": "搜狐",
+            "id": 148
+          },
+          {
+            "name": "爱奇艺",
+            "id": 166
+          },
+          {
+            "name": "欢聚集团",
+            "id": 167
+          },
+          {
+            "name": "完美世界",
+            "id": 160
+          },
+          {
+            "name": "PingCAP",
+            "id": 1622
+          },
+          {
+            "name": "中国农业银行",
+            "id": 900
+          },
+          {
+            "name": "微盟",
+            "id": 904
+          },
+          {
+            "name": "远景能源",
+            "id": 783
+          },
+          {
+            "name": "知乎",
+            "id": 963
+          },
+          {
+            "name": "莉莉丝游戏",
+            "id": 1648
+          },
+          {
+            "name": "交通银行",
+            "id": 1011
+          },
+          {
+            "name": "无端科技",
+            "id": 2798
+          },
+          {
+            "name": "贝壳",
+            "id": 1008
+          },
+          {
+            "name": "多益网络",
+            "id": 800
+          },
+          {
+            "name": "金山云",
+            "id": 1003
+          },
+          {
+            "name": "北京国双科技有限公司",
+            "id": 1827
+          },
+          {
+            "name": "途虎",
+            "id": 1513
+          }
+        ],
+        "postCount": 152,
+        "questionUUid": "75e878df47f24fdc9dc3e400ec6058ca"
+      },
+      {
+        "tpId": 117,
+        "questionId": 605,
+        "questionTitle": "判断链表中是否有环",
+        "questionNo": "NC4",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "客户端",
+            "id": 4
+          },
+          {
+            "name": "前端",
+            "id": 3
+          },
+          {
+            "name": "算法",
+            "id": 1
+          },
+          {
+            "name": "测试",
+            "id": 2
+          }
+        ],
+        "isNew": false,
+        "tqId": 37714,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          }
+        ],
+        "difficulty": 2,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 4,
+        "ranks": "",
+        "acceptRate": 35.9474,
+        "companys": [
+          {
+            "name": "百度",
+            "id": 139
+          },
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "腾讯",
+            "id": 138
+          },
+          {
+            "name": "shopee",
+            "id": 1049
+          },
+          {
+            "name": "京东",
+            "id": 151
+          },
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "多益网络",
+            "id": 800
+          },
+          {
+            "name": "滴滴",
+            "id": 652
+          },
+          {
+            "name": "酷家乐",
+            "id": 705
+          },
+          {
+            "name": "微软",
+            "id": 146
+          },
+          {
+            "name": "网易",
+            "id": 149
+          },
+          {
+            "name": "唯品会",
+            "id": 150
+          },
+          {
+            "name": "360公司",
+            "id": 157
+          },
+          {
+            "name": "中兴",
+            "id": 664
+          },
+          {
+            "name": "斗鱼",
+            "id": 701
+          },
+          {
+            "name": "奇安信",
+            "id": 2227
+          },
+          {
+            "name": "绿盟",
+            "id": 956
+          },
+          {
+            "name": "CVTE",
+            "id": 666
+          },
+          {
+            "name": "招银网络",
+            "id": 914
+          },
+          {
+            "name": "招商银行信用卡中心",
+            "id": 767
+          },
+          {
+            "name": "小米",
+            "id": 147
+          },
+          {
+            "name": "作业帮",
+            "id": 893
+          },
+          {
+            "name": "顺丰科技",
+            "id": 778
+          },
+          {
+            "name": "深信服",
+            "id": 711
+          },
+          {
+            "name": "好未来",
+            "id": 710
+          },
+          {
+            "name": "大华",
+            "id": 948
+          },
+          {
+            "name": "莉莉丝游戏",
+            "id": 1648
+          },
+          {
+            "name": "小鱼易连",
+            "id": 4885
+          },
+          {
+            "name": "得物app",
+            "id": 4757
+          },
+          {
+            "name": "中国移动",
+            "id": 924
+          },
+          {
+            "name": "网易互娱",
+            "id": 1063
+          }
+        ],
+        "postCount": 93,
+        "questionUUid": "650474f313294468a4ded3ce0f7898b9"
+      },
+      {
+        "tpId": 117,
+        "questionId": 682,
+        "questionTitle": "合并有序链表",
+        "questionNo": "NC33",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "客户端",
+            "id": 4
+          },
+          {
+            "name": "测试",
+            "id": 2
+          },
+          {
+            "name": "前端",
+            "id": 3
+          }
+        ],
+        "isNew": false,
+        "tqId": 37735,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          }
+        ],
+        "difficulty": 2,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 2,
+        "ranks": "",
+        "acceptRate": 33.2828,
+        "companys": [
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "腾讯",
+            "id": 138
+          },
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "百度",
+            "id": 139
+          },
+          {
+            "name": "华为",
+            "id": 239
+          },
+          {
+            "name": "小米",
+            "id": 147
+          },
+          {
+            "name": "一点资讯",
+            "id": 982
+          },
+          {
+            "name": "招银网络",
+            "id": 914
+          },
+          {
+            "name": "京东",
+            "id": 151
+          },
+          {
+            "name": "美团",
+            "id": 179
+          },
+          {
+            "name": "拼多多",
+            "id": 732
+          },
+          {
+            "name": "BIGO",
+            "id": 1019
+          },
+          {
+            "name": "微软",
+            "id": 146
+          },
+          {
+            "name": "小红书",
+            "id": 715
+          },
+          {
+            "name": "猿辅导",
+            "id": 758
+          },
+          {
+            "name": "顺丰科技",
+            "id": 778
+          },
+          {
+            "name": "网易",
+            "id": 149
+          },
+          {
+            "name": "shopee",
+            "id": 1049
+          },
+          {
+            "name": "得物app",
+            "id": 4757
+          },
+          {
+            "name": "保融科技",
+            "id": 1247
+          },
+          {
+            "name": "BOSS直聘",
+            "id": 4853
+          },
+          {
+            "name": "kyligence",
+            "id": 2106
+          }
+        ],
+        "postCount": 47,
+        "questionUUid": "a479a3f0c4554867b35356e0d57cf03d"
+      },
+      {
+        "tpId": 117,
+        "questionId": 722,
+        "questionTitle": "链表中的节点每k个一组翻转",
+        "questionNo": "NC50",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "算法",
+            "id": 1
+          },
+          {
+            "name": "客户端",
+            "id": 4
+          },
+          {
+            "name": "前端",
+            "id": 3
+          },
+          {
+            "name": "测试",
+            "id": 2
+          }
+        ],
+        "isNew": false,
+        "tqId": 37746,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          }
+        ],
+        "difficulty": 4,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 2,
+        "ranks": "",
+        "acceptRate": 28.3039,
+        "companys": [
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "京东",
+            "id": 151
+          },
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "腾讯",
+            "id": 138
+          },
+          {
+            "name": "百度",
+            "id": 139
+          },
+          {
+            "name": "CVTE",
+            "id": 666
+          },
+          {
+            "name": "猿辅导",
+            "id": 758
+          },
+          {
+            "name": "kyligence",
+            "id": 2106
+          },
+          {
+            "name": "BIGO",
+            "id": 1019
+          },
+          {
+            "name": "美团",
+            "id": 179
+          },
+          {
+            "name": "新浪",
+            "id": 812
+          },
+          {
+            "name": "猫眼",
+            "id": 934
+          }
+        ],
+        "postCount": 38,
+        "questionUUid": "b49c3dc907814e9bbfa8437c251b028e"
+      },
+      {
+        "tpId": 117,
+        "questionId": 604,
+        "questionTitle": "链表中环的入口节点",
+        "questionNo": "NC3",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "客户端",
+            "id": 4
+          },
+          {
+            "name": "算法",
+            "id": 1
+          }
+        ],
+        "isNew": false,
+        "tqId": 37713,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          },
+          {
+            "name": "双指针",
+            "id": 5054
+          }
+        ],
+        "difficulty": 3,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 2,
+        "ranks": "",
+        "acceptRate": 29.2456,
+        "companys": [
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "百度",
+            "id": 139
+          },
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "网易",
+            "id": 149
+          },
+          {
+            "name": "腾讯",
+            "id": 138
+          },
+          {
+            "name": "小米",
+            "id": 147
+          },
+          {
+            "name": "美团",
+            "id": 179
+          },
+          {
+            "name": "映客",
+            "id": 1228
+          },
+          {
+            "name": "神策数据",
+            "id": 1084
+          },
+          {
+            "name": "网易有道",
+            "id": 896
+          },
+          {
+            "name": "拼多多",
+            "id": 732
+          },
+          {
+            "name": "探探",
+            "id": 1684
+          },
+          {
+            "name": "阿里巴巴",
+            "id": 134
+          },
+          {
+            "name": "招银网络",
+            "id": 914
+          },
+          {
+            "name": "网易互娱",
+            "id": 1063
+          }
+        ],
+        "postCount": 37,
+        "questionUUid": "6e630519bf86480296d0f1c868d425ad"
+      },
+      {
+        "tpId": 117,
+        "questionId": 727,
+        "questionTitle": "删除链表的倒数第n个节点",
+        "questionNo": "NC53",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "前端",
+            "id": 3
+          },
+          {
+            "name": "客户端",
+            "id": 4
+          },
+          {
+            "name": "算法",
+            "id": 1
+          }
+        ],
+        "isNew": false,
+        "tqId": 37750,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          },
+          {
+            "name": "双指针",
+            "id": 5054
+          }
+        ],
+        "difficulty": 3,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 2,
+        "ranks": "",
+        "acceptRate": 28.446,
+        "companys": [
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "美团",
+            "id": 179
+          },
+          {
+            "name": "腾讯",
+            "id": 138
+          },
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "猿辅导",
+            "id": 758
+          },
+          {
+            "name": "招银网络",
+            "id": 914
+          },
+          {
+            "name": "百度",
+            "id": 139
+          },
+          {
+            "name": "小米",
+            "id": 147
+          },
+          {
+            "name": "携程",
+            "id": 153
+          },
+          {
+            "name": "多益网络",
+            "id": 800
+          },
+          {
+            "name": "shopee",
+            "id": 1049
+          },
+          {
+            "name": "顺丰科技",
+            "id": 778
+          },
+          {
+            "name": "拼多多",
+            "id": 732
+          },
+          {
+            "name": "中国电信",
+            "id": 811
+          }
+        ],
+        "postCount": 34,
+        "questionUUid": "f95dcdafbde44b22a6d741baf71653f6"
+      },
+      {
+        "tpId": 117,
+        "questionId": 1008772,
+        "questionTitle": "两个链表生成相加链表",
+        "questionNo": "NC40",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "客户端",
+            "id": 4
+          },
+          {
+            "name": "前端",
+            "id": 3
+          }
+        ],
+        "isNew": false,
+        "tqId": 37814,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          }
+        ],
+        "difficulty": 3,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 1,
+        "ranks": "",
+        "acceptRate": 16.8088,
+        "companys": [
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "shopee",
+            "id": 1049
+          },
+          {
+            "name": "华为",
+            "id": 239
+          },
+          {
+            "name": "腾讯",
+            "id": 138
+          },
+          {
+            "name": "微软",
+            "id": 146
+          },
+          {
+            "name": "网易",
+            "id": 149
+          },
+          {
+            "name": "作业帮",
+            "id": 893
+          },
+          {
+            "name": "猿辅导",
+            "id": 758
+          },
+          {
+            "name": "FreeWheel",
+            "id": 798
+          },
+          {
+            "name": "美团",
+            "id": 179
+          },
+          {
+            "name": "百度",
+            "id": 139
+          }
+        ],
+        "postCount": 30,
+        "questionUUid": "c56f6c70fb3f4849bc56e33ff2a50b6b"
+      },
+      {
+        "tpId": 117,
+        "questionId": 23257,
+        "questionTitle": "两个链表的第一个公共结点",
+        "questionNo": "NC66",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "客户端",
+            "id": 4
+          },
+          {
+            "name": "测试",
+            "id": 2
+          },
+          {
+            "name": "前端",
+            "id": 3
+          }
+        ],
+        "isNew": false,
+        "tqId": 37761,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          }
+        ],
+        "difficulty": 2,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 1,
+        "ranks": "",
+        "acceptRate": 34.0035,
+        "companys": [
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "百度",
+            "id": 139
+          },
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "招银网络",
+            "id": 914
+          },
+          {
+            "name": "小米",
+            "id": 147
+          },
+          {
+            "name": "奇安信",
+            "id": 2227
+          },
+          {
+            "name": "网易",
+            "id": 149
+          },
+          {
+            "name": "shopee",
+            "id": 1049
+          },
+          {
+            "name": "华为",
+            "id": 239
+          },
+          {
+            "name": "腾讯",
+            "id": 138
+          },
+          {
+            "name": "小红书",
+            "id": 715
+          }
+        ],
+        "postCount": 27,
+        "questionUUid": "6ab1d9a29e88450685099d45c9e31e46"
+      },
+      {
+        "tpId": 117,
+        "questionId": 724,
+        "questionTitle": "合并k个已排序的链表",
+        "questionNo": "NC51",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "客户端",
+            "id": 4
+          },
+          {
+            "name": "算法",
+            "id": 1
+          },
+          {
+            "name": "前端",
+            "id": 3
+          },
+          {
+            "name": "测试",
+            "id": 2
+          }
+        ],
+        "isNew": false,
+        "tqId": 37747,
+        "tags": [
+          {
+            "name": "堆",
+            "id": 586
+          },
+          {
+            "name": "链表",
+            "id": 580
+          },
+          {
+            "name": "分治",
+            "id": 594
+          }
+        ],
+        "difficulty": 4,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 1,
+        "ranks": "",
+        "acceptRate": 29.1244,
+        "companys": [
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "猿辅导",
+            "id": 758
+          },
+          {
+            "name": "知乎",
+            "id": 963
+          },
+          {
+            "name": "度小满",
+            "id": 1059
+          },
+          {
+            "name": "网易",
+            "id": 149
+          },
+          {
+            "name": "BIGO",
+            "id": 1019
+          },
+          {
+            "name": "粉笔网",
+            "id": 1759
+          },
+          {
+            "name": "贝壳",
+            "id": 1008
+          },
+          {
+            "name": "百度",
+            "id": 139
+          },
+          {
+            "name": "腾讯",
+            "id": 138
+          }
+        ],
+        "postCount": 25,
+        "questionUUid": "65cfde9e5b9b4cf2b6bafa5f3ef33fa6"
+      },
+      {
+        "tpId": 117,
+        "questionId": 1008897,
+        "questionTitle": "链表排序",
+        "questionNo": "NC70",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "测试",
+            "id": 2
+          },
+          {
+            "name": "算法",
+            "id": 1
+          },
+          {
+            "name": "客户端",
+            "id": 4
+          }
+        ],
+        "isNew": false,
+        "tqId": 37817,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          },
+          {
+            "name": "排序",
+            "id": 590
+          }
+        ],
+        "difficulty": 2,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 1,
+        "ranks": "",
+        "acceptRate": 28.1208,
+        "companys": [
+          {
+            "name": "腾讯",
+            "id": 138
+          },
+          {
+            "name": "猿辅导",
+            "id": 758
+          },
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "美团",
+            "id": 179
+          },
+          {
+            "name": "大华",
+            "id": 948
+          },
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "拼多多",
+            "id": 732
+          },
+          {
+            "name": "滴滴",
+            "id": 652
+          },
+          {
+            "name": "英特尔",
+            "id": 650
+          },
+          {
+            "name": "百度",
+            "id": 139
+          },
+          {
+            "name": "shopee",
+            "id": 1049
+          }
+        ],
+        "postCount": 22,
+        "questionUUid": "f23604257af94d939848729b1a5cda08"
+      },
+      {
+        "tpId": 117,
+        "questionId": 1008769,
+        "questionTitle": "判断一个链表是否为回文结构",
+        "questionNo": "NC96",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "算法",
+            "id": 1
+          },
+          {
+            "name": "客户端",
+            "id": 4
+          }
+        ],
+        "isNew": false,
+        "tqId": 37813,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          },
+          {
+            "name": "双指针",
+            "id": 5054
+          }
+        ],
+        "difficulty": 2,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 1,
+        "ranks": "",
+        "acceptRate": 28.1364,
+        "companys": [
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "腾讯",
+            "id": 138
+          },
+          {
+            "name": "昆仑万维",
+            "id": 183
+          },
+          {
+            "name": "网易",
+            "id": 149
+          },
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "华为",
+            "id": 239
+          },
+          {
+            "name": "美团",
+            "id": 179
+          }
+        ],
+        "postCount": 15,
+        "questionUUid": "3fed228444e740c8be66232ce8b87c2f"
+      },
+      {
+        "tpId": 117,
+        "questionId": 654,
+        "questionTitle": "链表内指定区间反转",
+        "questionNo": "NC21",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          }
+        ],
+        "isNew": false,
+        "tqId": 37726,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          }
+        ],
+        "difficulty": 3,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 1,
+        "ranks": "",
+        "acceptRate": 26.3962,
+        "companys": [
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "猿辅导",
+            "id": 758
+          },
+          {
+            "name": "小米",
+            "id": 147
+          },
+          {
+            "name": "美团",
+            "id": 179
+          },
+          {
+            "name": "触宝",
+            "id": 1005
+          },
+          {
+            "name": "腾讯",
+            "id": 138
+          }
+        ],
+        "postCount": 14,
+        "questionUUid": "b58434e200a648c589ca2063f1faf58c"
+      },
+      {
+        "tpId": 117,
+        "questionId": 663,
+        "questionTitle": "删除有序链表中重复出现的元素",
+        "questionNo": "NC24",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "测试",
+            "id": 2
+          },
+          {
+            "name": "客户端",
+            "id": 4
+          }
+        ],
+        "isNew": false,
+        "tqId": 37729,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          }
+        ],
+        "difficulty": 3,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 1,
+        "ranks": "",
+        "acceptRate": 27.1765,
+        "companys": [
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "小米",
+            "id": 147
+          },
+          {
+            "name": "微软",
+            "id": 146
+          },
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "美团",
+            "id": 179
+          },
+          {
+            "name": "招银网络",
+            "id": 914
+          }
+        ],
+        "postCount": 12,
+        "questionUUid": "71cef9f8b5564579bf7ed93fbe0b2024"
+      },
+      {
+        "tpId": 117,
+        "questionId": 1073463,
+        "questionTitle": "链表的奇偶重排",
+        "questionNo": "NC133",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          }
+        ],
+        "isNew": false,
+        "tqId": 37845,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          },
+          {
+            "name": "排序",
+            "id": 590
+          }
+        ],
+        "difficulty": 3,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 1,
+        "ranks": "",
+        "acceptRate": 43.6937,
+        "companys": [
+          {
+            "name": "猿辅导",
+            "id": 758
+          },
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "华为",
+            "id": 239
+          },
+          {
+            "name": "百度",
+            "id": 139
+          },
+          {
+            "name": "腾讯",
+            "id": 138
+          }
+        ],
+        "postCount": 12,
+        "questionUUid": "02bf49ea45cd486daa031614f9bd6fc3"
+      },
+      {
+        "tpId": 117,
+        "questionId": 603,
+        "questionTitle": "重排链表",
+        "questionNo": "NC2",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "算法",
+            "id": 1
+          },
+          {
+            "name": "前端",
+            "id": 3
+          }
+        ],
+        "isNew": false,
+        "tqId": 37712,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          }
+        ],
+        "difficulty": 3,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 1,
+        "ranks": "",
+        "acceptRate": 20.5881,
+        "companys": [
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "招银网络",
+            "id": 914
+          },
+          {
+            "name": "百度",
+            "id": 139
+          },
+          {
+            "name": "小米",
+            "id": 147
+          }
+        ],
+        "postCount": 9,
+        "questionUUid": "3d281dc0b3704347846a110bf561ef6b"
+      },
+      {
+        "tpId": 117,
+        "questionId": 664,
+        "questionTitle": "删除有序链表中重复的元素",
+        "questionNo": "NC25",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "测试",
+            "id": 2
+          }
+        ],
+        "isNew": false,
+        "tqId": 37730,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          }
+        ],
+        "difficulty": 2,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 1,
+        "ranks": "",
+        "acceptRate": 34.948,
+        "companys": [
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "猿辅导",
+            "id": 758
+          },
+          {
+            "name": "快手",
+            "id": 898
+          },
+          {
+            "name": "paypal",
+            "id": 671
+          },
+          {
+            "name": "商汤科技",
+            "id": 802
+          },
+          {
+            "name": "招银网络",
+            "id": 914
+          }
+        ],
+        "postCount": 9,
+        "questionUUid": "c087914fae584da886a0091e877f2c79"
+      },
+      {
+        "tpId": 117,
+        "questionId": 1008767,
+        "questionTitle": "环形链表的约瑟夫问题",
+        "questionNo": "NC132",
+        "jobs": [
+          {
+            "name": "研发",
+            "id": 0
+          },
+          {
+            "name": "测试",
+            "id": 2
+          }
+        ],
+        "isNew": false,
+        "tqId": 37812,
+        "tags": [
+          {
+            "name": "链表",
+            "id": 580
+          },
+          {
+            "name": "数学",
+            "id": 5050
+          }
+        ],
+        "difficulty": 3,
+        "topicUrl": "/ta/job-code-high",
+        "postPage": 1,
+        "ranks": "",
+        "acceptRate": 42.5012,
+        "companys": [
+          {
+            "name": "用友",
+            "id": 782
+          },
+          {
+            "name": "字节跳动",
+            "id": 665
+          },
+          {
+            "name": "跟谁学",
+            "id": 1065
+          },
+          {
+            "name": "贝壳",
+            "id": 1008
+          },
+          {
+            "name": "百度",
+            "id": 139
+          }
+        ],
+        "postCount": 7,
+        "questionUUid": "41c399fdb6004b31a6cbb047c641ed8a"
+      }
+    ],
+    "updateTime": "2021-01-26 11:04",
+    "totalCount": 17,
+    "hiddenTag": false,
+    "passCount": 0,
+    "tagArray": [
+      {
+        "count": 27,
+        "id": 578,
+        "title": "数组"
+      },
+      {
+        "count": 26,
+        "id": 593,
+        "title": "动态规划"
+      },
+      {
+        "count": 25,
+        "id": 579,
+        "title": "字符串"
+      },
+      {
+        "count": 25,
+        "id": 583,
+        "title": "树"
+      },
+      {
+        "count": 19,
+        "id": 580,
+        "title": "链表"
+      },
+      {
+        "count": 13,
+        "id": 5051,
+        "title": "dfs"
+      },
+      {
+        "count": 12,
+        "id": 5058,
+        "title": "二分"
+      },
+      {
+        "count": 12,
+        "id": 5054,
+        "title": "双指针"
+      },
+      {
+        "count": 10,
+        "id": 5050,
+        "title": "数学"
+      },
+      {
+        "count": 9,
+        "id": 585,
+        "title": "哈希"
+      },
+      {
+        "count": 9,
+        "id": 3493,
+        "title": "回溯"
+      },
+      {
+        "count": 8,
+        "id": 581,
+        "title": "栈"
+      },
+      {
+        "count": 7,
+        "id": 590,
+        "title": "排序"
+      },
+      {
+        "count": 6,
+        "id": 594,
+        "title": "分治"
+      },
+      {
+        "count": 5,
+        "id": 586,
+        "title": "堆"
+      },
+      {
+        "count": 5,
+        "id": 5074,
+        "title": "位运算"
+      },
+      {
+        "count": 5,
+        "id": 1263,
+        "title": "bfs"
+      },
+      {
+        "count": 4,
+        "id": 592,
+        "title": "贪心"
+      },
+      {
+        "count": 4,
+        "id": 595,
+        "title": "模拟"
+      },
+      {
+        "count": 3,
+        "id": 591,
+        "title": "递归"
+      },
+      {
+        "count": 2,
+        "id": 584,
+        "title": "图"
+      },
+      {
+        "count": 1,
+        "id": 582,
+        "title": "队列"
+      },
+      {
+        "count": 1,
+        "id": 5166,
+        "title": "并查集"
+      },
+      {
+        "count": 1,
+        "id": 3381,
+        "title": "搜索"
+      }
+    ]
+  }
+}

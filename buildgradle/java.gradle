@@ -1,11 +1,15 @@
 apply plugin: 'java-library'
+apply plugin: 'kotlin'
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.kotlinStdlibJdk8
 
 }
+
 sourceCompatibility = rootProject.ext.javaSourceCompatibility
 targetCompatibility = rootProject.ext.javaTargetCompatibility
+
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"

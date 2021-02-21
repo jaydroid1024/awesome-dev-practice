@@ -9,7 +9,7 @@
         android:label="MVVM 组件"
         tools:replace="android:label">
         <activity
-            android:name="com.jay.biz_jetpack.MvvmMainActivity"
+            android:name="com.jay.biz_mvvm.MvvmMainActivity"
             android:theme="@style/base_common_app_theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,28 +1,21 @@
 package com.jay.base_component.base.mvp
 
+import com.jay.base_component.network.bean.wan.BaseResponse
 import com.jay.base_component.network.error.ExceptionHandler
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.plugins.RxJavaPlugins
 
-abstract class BaseObserver<T> : DisposableObserver<T> {
+abstract class BaseObserver<T> : DisposableObserver<BaseResponse<T>> {
 
-
-    private var baseView: IView? = null
 
     constructor() : super()
 
-    constructor(view: IView?) : super() {
-        baseView = view
-    }
-
     override fun onStart() {
         super.onStart()
-        baseView?.showLoading()
     }
 
-    override fun onNext(response: T) {
-        baseView?.dismissLoading()
-        onSuccess(response)
+    override fun onNext(response: BaseResponse<T>) {
+        onSuccess(response.data)
     }
 
     override fun onError(e: Throwable) {
@@ -33,10 +26,10 @@ abstract class BaseObserver<T> : DisposableObserver<T> {
         RxJavaPlugins.setErrorHandler(Throwable::printStackTrace)
     }
 
-    abstract fun onSuccess(data: T)
+    abstract fun onSuccess(data: T?)
 
     override fun onComplete() {
-        baseView?.dismissLoading()
+
     }
 
     companion object {

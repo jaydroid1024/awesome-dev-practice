@@ -1,35 +1,28 @@
 apply from: "../../buildgradle/lib.gradle"
 
+
 dependencies {
     //stetho
-    api rootProject.ext.stetho
-    api rootProject.ext.stethoOkhttp3
+    implementation rootProject.ext.stetho
+    implementation rootProject.ext.stethoOkhttp3
     //Chuck
-    debugApi rootProject.ext.chuckDebug
-    releaseApi rootProject.ext.chuckRelease
+    debugImplementation rootProject.ext.chuckDebug
+    releaseImplementation rootProject.ext.chuckRelease
     //retrofit
     api rootProject.ext.retrofit
-    api rootProject.ext.retrofitConverterGson
-    api rootProject.ext.retrofitAdapterRxjava
-    api rootProject.ext.retrofitUrlManager
+    implementation rootProject.ext.retrofitConverterGson
+    implementation rootProject.ext.retrofitAdapterRxjava
+    api rootProject.ext.retrofitUrlManager //支持修改base url
     //okhttp
-    api rootProject.ext.okhttp
-    api rootProject.ext.okhttpLoggingInterceptor
+    implementation rootProject.ext.okhttp
+    implementation rootProject.ext.okhttpLoggingInterceptor
     //rxjava
     api rootProject.ext.rxjava
     api rootProject.ext.rxandroid
-    //gson
-    api rootProject.ext.gson
+
+    implementation project(path: ':lib:lib-app')
 
 }
 
 
-/**
- * 每个发布的组件需要单独配置的信息
- */
-// 唯一标识
-//group "com.jay.${project.name}"
-//// 版本号
-//version "1.0.0"
-//// maven publish 公共 gradle 插件
-//apply from: "../../buildgradle/maven.gradle"
+

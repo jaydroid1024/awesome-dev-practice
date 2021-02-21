@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jay.biz_jetpack">
+    package="com.jay.biz_mvvm">
 
     <application>
-        <activity android:name="com.jay.biz_jetpack.databinding.DataBindingActivity"></activity>
-        <activity android:name="com.jay.biz_jetpack.MvvmMainActivity" />
+        <activity android:name=".MvvmMainActivity" />
+        <activity android:name=".demo.v.user.MainActivity"/>
+        <activity android:name=".demo.v.user.LoginActivity" />
+        <activity android:name=".demo.v.user.RegisterActivity" />
     </application>
 
 </manifest>

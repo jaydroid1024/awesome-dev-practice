@@ -7,11 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    //模块中启用ViewBinding
-    //谷歌在 Android Studio 3.6 Canary 11 及更高版本中加入了新的视图绑定工具 ViewBinding。
-    viewBinding {
-        enabled = true
-    }
+
     // Android Plugin for Gradle 1.5.0+
     dataBinding {
         enabled true
@@ -74,8 +70,9 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'] )
     implementation rootProject.ext.kotlinStdlibJdk8
+    implementation rootProject.ext.kotlinxCoroutinesAndroid
     implementation rootProject.ext.appcompat
     implementation rootProject.ext.coreKtx
     testImplementation rootProject.ext.junit
@@ -83,7 +80,17 @@ dependencies {
     androidTestImplementation rootProject.ext.espressoCore
     implementation rootProject.ext.constraintLayout
 
+    implementation rootProject.ext.lifecycleExtensions
+    implementation rootProject.ext.lifecycleViewmodelKtx
+    implementation rootProject.ext.activityKtx
+    implementation rootProject.ext.fragmentKtx
+
+
+
     implementation project(path: ':base:base-common')
+
+    implementation project(path: ':lib:lib-net')
+
     //需要所有使用 ARouter 的组件都添加依赖
     kapt rootProject.ext.arouterCompiler
     //Arouter

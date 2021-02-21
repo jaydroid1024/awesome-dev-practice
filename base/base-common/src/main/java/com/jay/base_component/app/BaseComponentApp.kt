@@ -4,14 +4,16 @@ import android.app.Application
 import android.content.Context
 import android.content.res.Configuration
 import android.util.Log
+import com.alibaba.android.arouter.launcher.ARouter
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor
 import com.jay.base_component.config.AppConfigHelper
 import com.jay.base_component.network.default_net.DefaultNetFactory
-import com.jay.base_lib.app.appdelegate.IAppLife
-import com.jay.base_lib.app.appdelegate.PriorityLevel
+import com.jay.base_lib.BuildConfig
 import com.jay.base_lib.utils.Utils
+import com.qlife.lib_app.appdelegate.AppPriority
+import com.qlife.lib_app.appdelegate.IAppLife
 
 /**
  * BaseApp,反射调用
@@ -32,8 +34,26 @@ class BaseComponentApp : IAppLife {
         app = application
         instance = this
         //初始化工具类
+        initRouter(application)
         Utils.init(application)
         initApp()
+    }
+
+    /**
+     * 初始化Router
+     */
+    private fun initRouter(application: Application) {
+        // 这两行必须写在init之前，否则这些配置在init过程中将无效
+        if (BuildConfig.DEBUG) {
+            // 打印日志
+            ARouter.openLog()
+            // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
+            ARouter.openDebug()
+            // 打印日志的时候打印线程堆栈
+            ARouter.printStackTrace()
+        }
+        // 尽可能早，推荐在Application中初始化
+        ARouter.init(application)
     }
 
     private fun initApp() {
@@ -65,8 +85,8 @@ class BaseComponentApp : IAppLife {
     /**
      * 设置该appLife的优先级，必须设置，否则不会回调
      */
-    override fun onPriority(): String {
-        return PriorityLevel.MEDIUM
+    override fun onPriority(): Int {
+        return AppPriority.MEDIUM_DEFAULT
     }
 
     fun getPersistentCookieJar(): PersistentCookieJar {

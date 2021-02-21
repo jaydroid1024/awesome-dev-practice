@@ -454,12 +454,94 @@ object ARPath {
         /**
          * 数据绑定页面
          */
-        const val DATA_BINDING_VIEW_MODEL_ACTIVITY_PATH = "${GROUP}/jetpack/databinding/viewnodel/activity"
+        const val DATA_BINDING_VIEW_MODEL_ACTIVITY_PATH =
+            "${GROUP}/jetpack/databinding/viewnodel/activity"
 
         /**
          * 数据绑定页面
          */
-        const val DATA_BINDING_LIVE_DATA_ACTIVITY_PATH = "${GROUP}/jetpack/databinding/livedata/activity"
+        const val DATA_BINDING_LIVE_DATA_ACTIVITY_PATH =
+            "${GROUP}/jetpack/databinding/livedata/activity"
+
+
+        /**
+         * 依赖注入页面
+         */
+        const val HINT_ACTIVITY_PATH = "${GROUP}/jetpack/hint/activity"
+
+        /**
+         * 依赖注入页面
+         */
+        const val HINT_USE_ACTIVITY_PATH = "${GROUP}/jetpack/hint/use/activity"
+
+
+        /**
+         * Room 持久性库页面
+         */
+        const val ROOM_ACTIVITY_PATH = "${GROUP}/jetpack/room/activity"
+
+        /**
+         * Room 持久性库页面
+         */
+        const val ROOM_USE_ACTIVITY_PATH = "${GROUP}/jetpack/room/use/activity"
+
+
+    }
+
+
+    /**
+     * kotlin 组件
+     */
+    object PathKotlin {
+
+        /**
+         * group name
+         */
+        private const val GROUP = "/kotlin"
+
+        /**
+         * 组件主页面
+         */
+        const val KOTLIN_MAIN_ACTIVITY_PATH = "${GROUP}/kotlin/main/activity"
+
+        /**
+         * 组件主页面
+         */
+        const val COROUTINE_MAIN_ACTIVITY_PATH = "${GROUP}/kotlin/coroutine/activity"
+
+        /**
+         * 组件主页面
+         */
+        const val COROUTINE_USE_ACTIVITY_PATH = "${GROUP}/kotlin/coroutine/use/activity"
+
+
+    }
+
+
+    /**
+     * group 组件
+     */
+    object PathAndroid {
+
+        /**
+         * group name
+         */
+        private const val GROUP = "/android"
+
+        /**
+         * 组件主页面
+         */
+        const val ANDROID_MAIN_ACTIVITY_PATH = "${GROUP}/android/main/activity"
+
+        /**
+         * 组件主页面
+         */
+        const val TOUCH_EVENT_MAIN_ACTIVITY_PATH = "${GROUP}/android/touch_event/main/activity"
+
+        /**
+         * 组件主页面
+         */
+        const val TOUCH_EVENT_DISPATCH_ACTIVITY_PATH = "${GROUP}/android/touch_event/dispatch/activity"
 
     }
 

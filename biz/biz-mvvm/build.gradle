@@ -1,6 +1,13 @@
 apply from: "../../buildgradle/biz.gradle"
-
+apply plugin: 'kotlin-android'
 
 dependencies {
+
     implementation project(path: ':base:base-common')
+
+    implementation project(path: ':lib:lib-persistence')
+
+
+
+
 }

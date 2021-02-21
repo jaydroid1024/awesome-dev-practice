@@ -6,7 +6,7 @@
 
         <variable
             name="userViewModelLiveData"
-            type="com.jay.biz_jetpack.databinding.data.UserViewModelLiveData" />
+            type="com.jay.biz_mvvm.databinding.data.UserViewModelLiveData" />
     </data>
 
     <LinearLayout

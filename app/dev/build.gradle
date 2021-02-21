@@ -85,20 +85,6 @@ android {
 
 dependencies {
 
-    implementation project(path: ':biz:biz-detail')
-
-    implementation project(path: ':base:base-dev')
-
-    implementation project(path: ':base:base-web')
-
-    implementation project(path: ':biz:biz-movie')
-
-    implementation project(path: ':biz:biz-english')
-
-    implementation project(path: ':biz:biz-pattern')
-
-    implementation project(path: ':biz:biz-java')
-
     implementation rootProject.ext.appcompat
     implementation rootProject.ext.coreKtx
     testImplementation rootProject.ext.junit

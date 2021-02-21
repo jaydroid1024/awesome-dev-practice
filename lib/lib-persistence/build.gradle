@@ -1,0 +1,33 @@
+
+apply from: "../../buildgradle/lib.gradle"
+apply plugin: 'kotlin-kapt'
+dependencies {
+
+    //rxjava
+    implementation rootProject.ext.rxjava
+
+    //rxandroid
+    implementation rootProject.ext.rxandroid
+
+    //gson
+    implementation rootProject.ext.gson
+
+    //mmkv
+    implementation rootProject.ext.mmkvStatic
+
+    //DataStore
+    implementation rootProject.ext.datastore
+
+    //rxPreferences
+    implementation rootProject.ext.rxPreferences
+    //room
+    implementation rootProject.ext.roomRuntime
+    kapt rootProject.ext.roomCompiler
+    implementation rootProject.ext.roomKtx
+    implementation rootProject.ext.roomRxjava2
+    implementation project(path: ':lib:lib-app')
+
+}
+
+
+

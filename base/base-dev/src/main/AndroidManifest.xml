@@ -14,7 +14,7 @@
         在高优先级的 App Module 中使用 tools:replace="android:name" 多个用"," 隔开
         直接用值 A 替换了值 B -->
     <application
-        android:name="com.jay.base_dev.application.WanApp"
+        android:name="com.jay.base_dev.application.DevApp"
         android:allowBackup="true"
         android:icon="@mipmap/base_dev_ic_launcher"
         android:label="@string/base_dev_app_name"

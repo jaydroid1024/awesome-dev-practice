@@ -6,11 +6,11 @@
 
         <variable
             name="userViewModel"
-            type="com.jay.biz_jetpack.databinding.data.UserViewModel" />
+            type="com.jay.biz_mvvm.databinding.data.UserViewModel" />
 
         <variable
             name="userObservableViewModel"
-            type="com.jay.biz_jetpack.databinding.data.UserObservableViewModel" />
+            type="com.jay.biz_mvvm.databinding.data.UserObservableViewModel" />
     </data>
 
     <LinearLayout

@@ -1,1 +1,15 @@
-<manifest package="com.jay.lib_net" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jay.lib_net">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application>
+
+        <!--appLife ,name需要是全类名,value为固定值用于筛选 -->
+        <meta-data
+            android:name="com.jay.lib_net.app.LibNetApp"
+            android:value="IModuleConfig" />
+
+    </application>
+
+</manifest>

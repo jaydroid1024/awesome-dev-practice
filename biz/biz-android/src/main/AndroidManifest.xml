@@ -3,7 +3,9 @@
     package="com.jay.biz_android">
 
     <application>
-        <activity android:name=".AndroidMainActivity"></activity>
+        <activity android:name=".touch_event.TouchEventDispatchActivity"></activity>
+        <activity android:name=".touch_event.TouchEventMainActivity" />
+        <activity android:name=".AndroidMainActivity" />
     </application>
 
 </manifest>

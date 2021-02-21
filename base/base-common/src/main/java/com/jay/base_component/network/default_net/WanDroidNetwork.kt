@@ -1,6 +1,5 @@
 package com.jay.base_component.network.default_net
 
-import android.content.Context
 import com.jay.base_component.BuildConfig
 import com.jay.base_component.app.BaseComponentApp
 import com.jay.base_component.arouter.ARHelper
@@ -27,7 +26,7 @@ import io.reactivex.Observable
  * @date 2019-12-24 17:18
  */
 
-class WanDroidNetwork(context: Context) : AuthAbstractNetwork<WanDroidApiService>(context) {
+class WanDroidNetwork : AuthAbstractNetwork<WanDroidApiService>() {
     var userService: UserService? = null
 
     init {

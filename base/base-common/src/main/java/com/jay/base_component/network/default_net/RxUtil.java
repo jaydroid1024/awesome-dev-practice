@@ -1,7 +1,5 @@
 package com.jay.base_component.network.default_net;
 
-import android.content.Context;
-
 import io.reactivex.FlowableTransformer;
 import io.reactivex.ObservableTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -17,25 +15,20 @@ import io.reactivex.schedulers.Schedulers;
 public class RxUtil {
 
   private static final FlowableTransformer threadFlowableTransformer =
-      observable ->
-          (observable)
-              .subscribeOn(Schedulers.newThread())
-              .observeOn(AndroidSchedulers.mainThread());
+          observable -> (observable)
+                  .subscribeOn(Schedulers.newThread())
+                  .observeOn(AndroidSchedulers.mainThread());
+
   private static final ObservableTransformer threadObservableTransformer =
-      observable ->
-          (observable)
-              .subscribeOn(Schedulers.newThread())
-              .observeOn(AndroidSchedulers.mainThread());
+          observable -> (observable)
+                  .subscribeOn(Schedulers.newThread())
+                  .observeOn(AndroidSchedulers.mainThread());
+
   private static final FlowableTransformer threadTransformerWithDb =
-      observable -> (observable).subscribeOn(Schedulers.newThread());
-  private static Context staticContext;
+          observable -> (observable).subscribeOn(Schedulers.newThread());
 
   private RxUtil() {
     throw new UnsupportedOperationException("cannot be instantiated");
-  }
-
-  public static void init(Context context) {
-    staticContext = context;
   }
 
   @SuppressWarnings("unchecked")

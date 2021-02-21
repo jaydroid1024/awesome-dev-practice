@@ -1,0 +1,6 @@
+apply from: "../../buildgradle/lib.gradle"
+
+dependencies {
+
+}
+

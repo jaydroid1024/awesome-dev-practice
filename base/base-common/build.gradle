@@ -79,7 +79,7 @@ dependencies {
     androidTestImplementation rootProject.ext.espressoCore
 
     //基础功能组件
-    implementation project(path: ':lib:lib-common')
+    api project(path: ':lib:lib-common')
     
     //persistentcookiejar
     implementation rootProject.ext.persistentcookiejar

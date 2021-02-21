@@ -34,10 +34,14 @@ ext {
             butterknifeVersion = '10.2.1',
             immersionbarVersion = '3.0.0',
             tinkerVersion = '1.9.14',
+            roomVersion = '2.2.6',
+            hintVersion = '2.28-alpha',
 
     ]
 
     //引入三方依赖库时考虑该库到稳定性，可维护性，需要标明引入到github地址并归类放置
+
+
     dependencies = [
             /** ========================================================= */
             /** =================== android/androidX ==================== */
@@ -51,6 +55,26 @@ ext {
             androidJUnitRunner = "android.support.test.runner.AndroidJUnitRunner",
             constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.4",
 
+            lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:2.2.0",
+            activityKtx = "androidx.activity:activity-ktx:1.1.0",
+            fragmentKtx = "androidx.fragment:fragment-ktx:1.0.0",
+            lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0-alpha01",
+            lifecycleViewmodelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0",
+            lifecycleLivedataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0-alpha01",
+
+            datastore = "androidx.datastore:datastore:1.0.0-alpha04",
+
+
+            roomRuntime = "androidx.room:room-runtime:$roomVersion",
+            roomCompiler = "androidx.room:room-compiler:$roomVersion",
+            // optional - Kotlin Extensions and Coroutines support for Room
+            roomKtx = "androidx.room:room-ktx:$roomVersion",
+            // optional - RxJava support for Room
+            roomRxjava2 = "androidx.room:room-rxjava2:$roomVersion",
+
+            hiltAndroid = "com.google.dagger:hilt-android:$hintVersion",
+            hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:$hintVersion",
+
             /** ========================================================= */
             /** ========================= kotlin ======================== */
             /** ========================================================= */
@@ -62,6 +86,7 @@ ext {
             ankoSqlite = "org.jetbrains.anko:anko-sqlite:0.10.5",
             //kotlin-reflect
             kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion",
+            kotlinxCoroutinesAndroid = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9',
 
 
             /** ========================================================= */
@@ -103,6 +128,10 @@ ext {
 
             //gson https://github.com/google/gson
             gson = 'com.google.code.gson:gson:2.8.6',
+
+            rxPreferences = 'com.f2prateek.rx.preferences2:rx-preferences:2.0.1',
+
+            mmkvStatic = 'com.tencent:mmkv-static:1.2.7',
 
 
             /** ========================================================= */
@@ -200,8 +229,6 @@ ext {
             login = "com.jaydroid.login:login:1.0.0",
 
     ]
-
-
     /* ========================================================= */
     /* ==========================签名信息======================== */
     /* ========================================================= */

@@ -5,6 +5,7 @@ public class JavaClass {
         System.out.println("Java");
         String a = null;
         System.out.println();
+
     }
 
     @Override

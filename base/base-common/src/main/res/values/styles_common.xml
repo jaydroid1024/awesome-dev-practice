@@ -56,5 +56,9 @@
         <item name="android:layout_height">match_parent</item>
     </style>
 
+    <style name="CommonButton" parent="WrapWrap">
+        <item name="android:textSize">22sp</item>
+    </style>
+
 
 </resources>
