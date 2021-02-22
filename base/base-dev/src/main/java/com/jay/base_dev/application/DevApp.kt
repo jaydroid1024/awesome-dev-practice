@@ -4,8 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.res.Configuration
 import android.util.Log
-import com.alibaba.android.arouter.launcher.ARouter
-import com.jay.base_lib.BuildConfig
+
 import com.qlife.lib_app.appdelegate.ApplicationDelegate
 import dagger.hilt.android.HiltAndroidApp
 
@@ -18,7 +17,6 @@ import dagger.hilt.android.HiltAndroidApp
  * @date 2019-09-10
  */
 
-@HiltAndroidApp //@HiltAndroidApp 会触发 Hilt 的代码生成操作，生成的代码包括应用的一个基类，该基类充当应用级依赖项容器。
 class DevApp : Application() {
 
     /**

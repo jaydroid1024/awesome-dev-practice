@@ -14,7 +14,6 @@ import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.jay.base_component.R
 import com.jay.base_component.arouter.ARHelper
 import com.jay.base_component.base.view.BaseRichView
-import com.jay.base_component.constant.Constants
 import com.jay.base_lib.utils.ColorUtils
 import kotlinx.android.synthetic.main.base_common_demo_list_view.view.*
 import java.util.*
@@ -70,6 +69,9 @@ class DemoListView : BaseRichView, OnItemClickListener {
             topTv = top.findViewById<TextView>(R.id.tv_top)
             topCl = top.findViewById<ConstraintLayout>(R.id.cl_top)
             topContentTv = top.findViewById<TextView>(R.id.tv_top_content)
+            top.setOnClickListener {
+
+            }
             addHeaderView(top)
         }
     }
@@ -114,15 +116,15 @@ class DemoListView : BaseRichView, OnItemClickListener {
 
     override fun onItemClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
         val item = adapter.data[position] as DemoListEntity
-
+        if (listerner != null) {
+            listerner?.onItemClick(item)
+            return
+        }
         if (!item.isHeader) {
-            if (listerner != null) {
-                listerner?.onItemClick(item)
-                return
-            }
-            val map = HashMap<String, Any>(2)
-            map[Constants.MapKey.TITLE] = item.name ?: ""
-            ARHelper.routerTo(map, item.activityPath)
+
+        }
+        if (item.activityPath.isNotEmpty()) {
+            ARHelper.routerToWithJson(item.mapParams, item.activityPath)
         }
     }
 }

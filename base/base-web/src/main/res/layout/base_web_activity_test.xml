@@ -4,12 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".web.TestActivity">
+    tools:context=".WebTestActivity">
 
     <EditText
         android:id="@+id/et_web_first"
         android:layout_width="match_parent"
-        android:hint="Web测试地址一"
         android:layout_height="100dp" />
 
     <Button
@@ -17,11 +16,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Web测试地址一" />
+        android:text="Web 测试地址" />
 
     <EditText
         android:id="@+id/et_web_sec"
-        android:hint="Web测试地址二"
         android:layout_width="match_parent"
         android:layout_height="100dp" />
 
@@ -30,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Web测试地址二" />
+        android:text="FILE 测试地址" />
 
 
 </LinearLayout>

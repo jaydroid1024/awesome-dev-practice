@@ -7,4 +7,9 @@
 
     <include layout="@layout/base_common_layout_title_bar" />
 
+    <FrameLayout
+        android:id="@+id/fl_web_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>

@@ -14,25 +14,25 @@ rootProject.name = 'awesome-dev-practice'
 
 //include ':app:dev'
 
-include ':app:app-kotlin',
-//        ':app:app-detail',
-//        ':app:app-english',
-        ':app:app-android',
-//        ':app:app-dev',
-//        ':app:app-movie',
-//        ':app:app-card',
-//        ':app:app-pattern',
-        ':app:app-java'
+//include ':app:app-kotlin',
+////        ':app:app-detail',
+////        ':app:app-english',
+//        ':app:app-android',
+////        ':app:app-dev',
+////        ':app:app-movie',
+////        ':app:app-card',
+////        ':app:app-pattern',
+//        ':app:app-java'
 
-include ':biz:biz-kotlin',
+//include ':biz:biz-kotlin',
 //        ':biz:biz-detail',
-        ':biz:biz-android',
+//        ':biz:biz-android',
 //        ':biz:biz-movie',
 //        ':biz:biz-map',
 //        ':biz:biz-card',
 //        ':biz:biz-pattern',
 //        ':biz:biz-english',
-        ':biz:biz-java'
+//        ':biz:biz-java'
 
 include ':base:base-dev',
         ':base:base-common',
@@ -42,12 +42,19 @@ include ':base:base-dev',
 
 include ':lib:lib-common',
         ':lib:lib-net',
-        ':lib:lib-app',
+        ':lib:lib-app'
 //        ':lib:lib-cpu-helper',
-        ':lib:lib-kotlin',
-        ':lib:lib-algorithm',
+//        ':lib:lib-kotlin',
 //        ':lib:lib-pattern',
 //        ':lib:lib-xunfei-msc-jar',
 //        ':lib:lib-xunfei',
-        ':lib:lib-java'
+//        ':lib:lib-java'
 
+
+
+
+
+//todo-------------- 算法组件 ------------------
+include ':app:app-algorithm',
+        ':biz:biz-algorithm',
+        ':lib:lib-algorithm'

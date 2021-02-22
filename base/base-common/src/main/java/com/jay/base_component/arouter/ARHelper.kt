@@ -215,6 +215,16 @@ object ARHelper {
         return HashMap(capacity)
     }
 
+    private fun goToWeb(title: String, url: String) {
+        val mapParams = HashMap<String, Any>()
+        mapParams[Constants.MapKey.URL] = url
+        mapParams[Constants.MapKey.TITLE] = url
+        routerToWithJson(
+            mapParams,
+            ARPath.PathWeb.WEB_ACTIVITY_PATH
+        )
+    }
+
 
     /**
      * 目标页面中从HashMap中获取 String 类型的参数

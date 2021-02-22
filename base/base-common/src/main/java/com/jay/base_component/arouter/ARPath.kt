@@ -541,7 +541,27 @@ object ARPath {
         /**
          * 组件主页面
          */
-        const val TOUCH_EVENT_DISPATCH_ACTIVITY_PATH = "${GROUP}/android/touch_event/dispatch/activity"
+        const val TOUCH_EVENT_DISPATCH_ACTIVITY_PATH =
+            "${GROUP}/android/touch_event/dispatch/activity"
+
+    }
+
+
+    /**
+     * group 组件
+     */
+    object PathAlgorithm {
+
+        /**
+         * group name
+         */
+        private const val GROUP = "/algorithm"
+
+        /**
+         * 组件主页面
+         */
+        const val ALGORITHM_MAIN_ACTIVITY_PATH = "${GROUP}/algorithm/main/activity"
+
 
     }
 
