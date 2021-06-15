@@ -8,7 +8,8 @@ dependencies {
     implementation rootProject.ext.rxpermissions
     // 腾讯X5内核 webview
     api rootProject.ext.tbssdk
-
+    //jsBridge
+    implementation 'com.github.lzyzsd:jsbridge:1.0.4'
 }
 
 

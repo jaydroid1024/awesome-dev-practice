@@ -34,8 +34,8 @@ rootProject.name = 'awesome-dev-practice'
 //        ':biz:biz-english',
 //        ':biz:biz-java'
 
-include ':base:base-dev',
-        ':base:base-common',
+include ':base:base-common',
+        ':base:base-dev',
         ':base:base-web'
 //        ':base:base-speech',
 
@@ -44,17 +44,18 @@ include ':lib:lib-common',
         ':lib:lib-net',
         ':lib:lib-app'
 //        ':lib:lib-cpu-helper',
-//        ':lib:lib-kotlin',
 //        ':lib:lib-pattern',
 //        ':lib:lib-xunfei-msc-jar',
 //        ':lib:lib-xunfei',
 //        ':lib:lib-java'
 
 
-
-
-
 //todo-------------- 算法组件 ------------------
-include ':app:app-algorithm',
-        ':biz:biz-algorithm',
-        ':lib:lib-algorithm'
+//include ':app:app-algorithm',
+//        ':biz:biz-algorithm',
+//        ':lib:lib-algorithm'
+
+
+include ':app:app-kotlin',
+        ':biz:biz-kotlin',
+        ':lib:lib-kotlin'

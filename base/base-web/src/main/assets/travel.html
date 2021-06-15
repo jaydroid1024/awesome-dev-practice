@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <!-- 防止html被缓存 -->
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+</head>
+
+<body>
+<div class="travel-reimbursement">
+    <h1>差旅报销说明：</h1>
+    <p class="title-des first_tier_city"></p>
+    <p class="title-des self_driving_desc"></p>
+    <div class="table-wapper">
+        <table cellpadding="0" cellspacing="0" id="table">
+            <tr>
+                <th width="105">
+                    <span class="zj">职级</span>
+                    <span class="type">费用类型</span>
+                    <div class="line"></div>
+                </th>
+                <th width="200">往返交通费</th>
+                <th width="80">市内交通费</th>
+                <th width="80">住宿费<p>(一线城市)</p></th>
+                <th width="100">住宿费<p>(非一线城市)</p></th>
+                <th width="80">餐费</th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<script>
+        function getTravelData(resp) {
+            document.getElementById("result").innerHTML="Android传过来的数据为："+resp;
+
+            let newResp = JSON.parse(resp)
+            document.getElementsByClassName('first_tier_city')[0].innerText = newResp.first_tier_city
+            document.getElementsByClassName('self_driving_desc')[0].innerText = newResp.self_driving_desc
+            newResp.detail_list.forEach(item => {
+                let tr = document.createElement('tr')
+                tr.innerHTML = `
+                        <td>${item.rank}</td>
+                        <td>${item.transport_costs}</td>
+                        <td>${item.business_traveling}</td>
+                        <td>${item.first_tier_quarterage}</td>
+                        <td>${item.not_first_tier_quarterage}</td>
+                        <td>${item.meals}</td>
+                `
+                document.getElementById('table').appendChild(tr)
+            })
+        }
+
+
+</script>
+
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .travel-reimbursement {
+            width: 92%;
+            margin: 4% auto;
+            color: #0C0D34;
+        }
+
+        .travel-reimbursement h1 {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .title-des {
+            font-size: .8em;
+            color: #666;
+            line-height: 150%;
+        }
+
+        .travel-reimbursement div.table-wapper {
+            width: 100%;
+            margin-top: 15px;
+            overflow-x: auto;
+        }
+
+        table {
+            border-right: 1px solid #DCDCDC;
+            border-top: 1px solid #dcdcdc;
+            width: 700px;
+        }
+
+        table td,
+        table th {
+            border-bottom: 1px solid #dcdcdc;
+            border-left: 1px solid #dcdcdc;
+            padding: 2px 10px;
+            font-size: .8em;
+            text-align: center;
+        }
+        table th {
+            height: 50px;
+            position: relative;
+        }
+
+        table th p {
+            font-weight: normal;
+        }
+
+        table td {
+            color: #666;
+            padding: 10px;
+        }
+        table th:first-child {
+            padding: 0;
+        }
+        table th:first-child span {
+            position: absolute;
+        }
+        table th:first-child span.zj {
+            bottom: 10px;
+            left: 15px;
+        }
+        table th:first-child span.type {
+            top: 2px;
+            right: 8px;
+        }
+        .line {
+            width: 1px;
+            height: 118px;
+            background: #dcdcdc;
+            position: absolute;
+            transform: rotate(-62deg);
+            top: -33px;
+            left: 49px;
+        }
+
+
+
+</style>
+
+<div id="result"></div>
+</body>
+
+</html>
