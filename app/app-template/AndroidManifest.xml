@@ -14,7 +14,7 @@
 
         <!--region TODO 3. 修改入口Activity -->
         <activity
-            android:name="com.jay.base_speech.SpeechMainActivity"
+            android:name="com.jay.base_speech.speech.TtsDemo"
             android:theme="@style/base_common_app_theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

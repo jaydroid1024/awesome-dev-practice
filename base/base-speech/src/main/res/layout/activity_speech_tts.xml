@@ -6,7 +6,6 @@
     android:focusableInTouchMode="true"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:background="@color/bg_movie"
     android:padding="10dip">
 
     <TextView
@@ -16,8 +15,8 @@
         android:layout_weight="1"
         android:gravity="center"
         android:padding="20dp"
-        android:textColor="@color/white"
-        android:text="测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 测试文案 "
+        android:textColor="@color/black"
+        android:text="我的测试文案"
         android:textSize="30sp" />
 
     <LinearLayout

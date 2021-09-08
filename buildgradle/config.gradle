@@ -6,10 +6,10 @@ import groovy.json.JsonOutput
 ext {
 
     android = [
-            compileSdkVersion = 28,
-            buildToolsVersion = '28.0.3',
+            compileSdkVersion = 30,
+            buildToolsVersion = '30.0.3',
             minSdk = 21,
-            targetSdk = 29,
+            targetSdk = 30,
             versionCode = 1,
             versionName = "1.0.0"
     ]

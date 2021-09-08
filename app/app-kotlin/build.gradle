@@ -5,6 +5,7 @@ dependencies {
 
     implementation project(path: ':base:base-dev')
     implementation project(path: ':base:base-web')
+//    implementation project(path: ':base:base-speech')
 
     implementation project(path: ':biz:biz-kotlin')
 

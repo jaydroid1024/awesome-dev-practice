@@ -5,11 +5,10 @@ import android.content.Context
 import android.content.res.Configuration
 import android.util.Log
 import com.danikula.videocache.HttpProxyCacheServer
-import com.franmontiel.persistentcookiejar.PersistentCookieJar
 import com.iflytek.mscv5plusdemo.SpeechApp
-import com.jay.base_lib.app.appdelegate.IAppLife
-import com.jay.base_lib.app.appdelegate.PriorityLevel
 import com.jay.base_speech.speech.SpeechHelper
+import com.qlife.lib_app.appdelegate.AppPriority
+import com.qlife.lib_app.appdelegate.IAppLife
 
 /**
  * BaseApp,反射调用
@@ -20,7 +19,6 @@ import com.jay.base_speech.speech.SpeechHelper
  */
 class BaseSpeechApp : IAppLife {
 
-    private lateinit var cookieJar: PersistentCookieJar
     private var proxy: HttpProxyCacheServer? = null
 
     override fun attachBaseContext(base: Context) {
@@ -68,8 +66,8 @@ class BaseSpeechApp : IAppLife {
     /**
      * 设置该appLife的优先级，必须设置，否则不会回调
      */
-    override fun onPriority(): String {
-        return PriorityLevel.MEDIUM
+    override fun onPriority(): Int {
+        return AppPriority.MEDIUM_DEFAULT
     }
 
 

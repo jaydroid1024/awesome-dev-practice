@@ -1,15 +1,19 @@
 package com.jay.base_speech.speech
 
+import android.Manifest
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.iflytek.cloud.*
 import com.iflytek.cloud.util.ResourceUtil
@@ -21,7 +25,7 @@ import com.jay.base_component.constant.Constants
 import com.jay.base_speech.R
 
 @Route(path = ARPath.PathSpeech.SPEECH_ACTIVITY_PATH)
-class TtsDemo : Activity(), View.OnClickListener {
+class TtsDemo : AppCompatActivity(), View.OnClickListener {
     // 语音合成对象
     private var mTts: SpeechSynthesizer? = null
 
@@ -46,7 +50,6 @@ class TtsDemo : Activity(), View.OnClickListener {
     // 云端/本地选择按钮
     private var mRadioGroup: RadioGroup? = null
 
-    private var ttsText: TextView? = null
 
     private var ttsTextMain: TextView? = null
 
@@ -66,10 +69,37 @@ class TtsDemo : Activity(), View.OnClickListener {
         setContentView(R.layout.activity_speech_tts)
         initIntent()
         initLayout()
+        requestPermissions()
 
         initSpeech()
 
         initRes()
+    }
+
+
+    private fun requestPermissions() {
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                val permission = ActivityCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                )
+                if (permission != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(
+                        this, arrayOf(
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.LOCATION_HARDWARE,
+                            Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.READ_EXTERNAL_STORAGE,
+                            Manifest.permission.RECORD_AUDIO,
+                            Manifest.permission.READ_CONTACTS
+                        ), 0x0010
+                    )
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     private fun initIntent() {
@@ -112,14 +142,8 @@ class TtsDemo : Activity(), View.OnClickListener {
      * 初始化Layout。
      */
     private fun initLayout() {
-        ttsText = (findViewById<View>(R.id.tts_text) as TextView)
         ttsTextMain = (findViewById<View>(R.id.tts_text_main) as TextView)
-        ttsTextMain?.text = mTitle
         llTest = (findViewById<View>(R.id.ll_test) as LinearLayout)
-        llTest?.visibility = View.GONE
-        ttsTextMain?.setOnClickListener {
-            llTest?.visibility = View.VISIBLE
-        }
         findViewById<View>(com.iflytek.mscv5plusdemo.R.id.tts_play).setOnClickListener(
             this
         )
@@ -173,7 +197,7 @@ class TtsDemo : Activity(), View.OnClickListener {
             // 收到onCompleted 回调时，合成结束、生成合成音频
             // 合成的音频格式：只支持pcm格式
         } else if (id == com.iflytek.mscv5plusdemo.R.id.tts_play) {
-            startSpeech(ttsText?.text?.trim().toString())
+            startSpeech(ttsTextMain?.text?.trim().toString())
             // 取消合成
         } else if (id == com.iflytek.mscv5plusdemo.R.id.tts_cancel) {
             mTts!!.stopSpeaking()
@@ -194,12 +218,17 @@ class TtsDemo : Activity(), View.OnClickListener {
         setParam()
         Log.d(TAG, "准备点击： " + System.currentTimeMillis())
         val code = mTts!!.startSpeaking(text, mTtsListener)
-        //			/**
-        //			 * 只保存音频不进行播放接口,调用此接口请注释startSpeaking接口
-        //			 * text:要合成的文本，uri:需要保存的音频全路径，listener:回调接口
-        //			*/
-        //			String path = Environment.getExternalStorageDirectory()+"/tts.pcm";
-        //			int code = mTts.synthesizeToUri(text, path, mTtsListener);
+
+        /**
+         * 只保存音频不进行播放接口,调用此接口请注释startSpeaking接口
+         * text:要合成的文本，uri:需要保存的音频全路径，listener:回调接口
+         */
+        val path = Environment.getExternalStorageDirectory().absolutePath
+
+        val code2 = mTts!!.synthesizeToUri(text, path, mTtsListener)
+
+        Log.d(TAG, "path： $path")
+        Log.d(TAG, "code2： $code2")
         if (code != ErrorCode.SUCCESS) {
             showTip("语音合成失败,错误码: $code,请点击网址https://www.xfyun.cn/document/error-code查询解决方案")
         }
@@ -220,7 +249,7 @@ class TtsDemo : Activity(), View.OnClickListener {
                     // 点击了哪一项
                     voicerCloud = cloudVoicersValue?.get(which) ?: ""
                     if ("catherine" == voicerCloud || "henry" == voicerCloud || "vimary" == voicerCloud) {
-                        ttsText?.setText("hello world")
+                        ttsTextMain?.setText("hello world")
                     } else {
 
                     }
@@ -348,10 +377,6 @@ class TtsDemo : Activity(), View.OnClickListener {
                 mPercentForBuffering, mPercentForPlaying
             )
 
-            //todo
-            if(mPercentForPlaying >= 97){
-                this@TtsDemo.finish()
-            }
 
             Log.d(TAG, "onSpeakProgress,process: ] =${process}")
 
@@ -360,8 +385,7 @@ class TtsDemo : Activity(), View.OnClickListener {
         override fun onCompleted(error: SpeechError) {
             Log.d(TAG, "onCompleted, error ] =${error.errorDescription}")
             if (error == null) {
-//                showTip("播放完成")
-                this@TtsDemo.finish()
+                showTip("播放完成")
             } else if (error != null) {
                 showTip(error.getPlainDescription(true))
             }
@@ -381,17 +405,17 @@ class TtsDemo : Activity(), View.OnClickListener {
             }
 
             //实时音频流输出参考
-            /*if (SpeechEvent.EVENT_TTS_BUFFER == eventType) {
-            byte[] buf = obj.getByteArray(SpeechEvent.KEY_EVENT_TTS_BUFFER);
-            Log.e("MscSpeechLog", "buf is =" + buf);
-        }*/
+            if (SpeechEvent.EVENT_TTS_BUFFER == eventType) {
+                val buf = obj?.getByteArray(SpeechEvent.KEY_EVENT_TTS_BUFFER);
+                Log.e("MscSpeechLog", "buf is = $buf")
+            }
         }
     }
 
     private fun showTip(str: String) {
         runOnUiThread {
             mToast!!.setText(str)
-//            mToast!!.show()
+            mToast!!.show()
         }
     }
 

@@ -13,6 +13,7 @@ rootProject.name = 'awesome-dev-practice'
 //include ':app:app-map'
 
 //include ':app:dev'
+include ':app:app-template'
 
 //include ':app:app-kotlin',
 ////        ':app:app-detail',
@@ -36,18 +37,18 @@ rootProject.name = 'awesome-dev-practice'
 
 include ':base:base-common',
         ':base:base-dev',
-        ':base:base-web'
-//        ':base:base-speech',
+        ':base:base-web',
+        ':base:base-speech'
 
 
 include ':lib:lib-common',
         ':lib:lib-net',
-        ':lib:lib-app'
+        ':lib:lib-app',
 //        ':lib:lib-cpu-helper',
 //        ':lib:lib-pattern',
-//        ':lib:lib-xunfei-msc-jar',
-//        ':lib:lib-xunfei',
-//        ':lib:lib-java'
+        ':lib:lib-xunfei-msc-jar',
+        ':lib:lib-xunfei',
+        ':lib:lib-java'
 
 
 //todo-------------- 算法组件 ------------------
