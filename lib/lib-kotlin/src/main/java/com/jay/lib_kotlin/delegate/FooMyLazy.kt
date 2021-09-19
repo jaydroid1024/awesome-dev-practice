@@ -1,6 +1,5 @@
 package com.jay.lib_kotlin.delegate
 
-import kotlin.reflect.KProperty
 
 /**
  *
@@ -9,55 +8,35 @@ import kotlin.reflect.KProperty
  * @date 2021/9/2
  */
 class FooMyLazy {
+
     private var index = 0
-    val x: String by lazy_x {
-        println("lazy_x")
+    val x: String by myLazy {
+        println("myLazy is call")
         index++
         "xxx_$index"
     }
 
 
-    public fun <T> lazy_x(initializer: () -> T): LazyX<T> = LazyXImpl(initializer)
+}
+
+val f = fun(): String {
+    return "a"
+}
+
+
+fun main() {
+    val fooMyLazy = FooMyLazy()
+    println(fooMyLazy.x)
+    println(fooMyLazy.x)
+
+
+    val a: MyLazy<String> = myLazy(f)
+    val l: Lazy<String> = lazy(f)
+    val p = fooMyLazy::x
+    a.getValue(fooMyLazy, p)
+    l.getValue(fooMyLazy, p)
 
 
 }
 
-
-public interface LazyX<out T> {
-
-    public val valueX: T
-
-    public fun isInitialized(): Boolean
-
-}
-
-operator fun <T> LazyX<T>.getValue(thisRef: Any?, property: KProperty<*>): T = this.valueX
-
-
-internal object UNINITIALIZED_VALUE
-
-// internal to be called from lazy in JS
-internal class LazyXImpl<out T>(initializer: () -> T) : LazyX<T> {
-    private var initializer: (() -> T)? = initializer
-    private var _value: Any? = UNINITIALIZED_VALUE
-
-    override val valueX: T
-        get() {
-//            if (_value === UNINITIALIZED_VALUE) {
-//                println("not  initialized")
-//                _value = initializer!!()
-//                initializer = null
-//            }
-            _value = initializer!!()
-            println("initialized")
-            @Suppress("UNCHECKED_CAST")
-            return _value as T
-        }
-
-    override fun isInitialized(): Boolean = _value !== UNINITIALIZED_VALUE
-
-    override fun toString(): String =
-        if (isInitialized()) valueX.toString() else "Lazy value not initialized yet."
-
-}
 

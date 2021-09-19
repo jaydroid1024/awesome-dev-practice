@@ -1,5 +1,7 @@
 package com.jay.lib_kotlin.delegate
 
+import kotlin.properties.PropertyDelegateProvider
+import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 /**
@@ -10,27 +12,67 @@ import kotlin.reflect.KProperty
  */
 public open class FooBy {
 
-    //只要在by关键字后面带有一个代理对象，这个代理不一定要实现特定的接口，只要包含了那些签名特殊的get，或者get，set方法都有，那它就能作为一个代理属性来使用。
-    val y: String by MyDelegate()
+    //只要在by关键字后面带有一个代理对象，这个代理不一定要实现特定的接口，只要包含了getValue/setValue方法、那它就能作为一个代理属性来使用。
+    var y by MyDelegate()
 
-    var w: String by MyDelegate()
+
+    private val provider = PropertyDelegateProvider<FooBy, MyDelegate> { thisRef, property ->
+        if (thisRef.y == "YYY") {
+            MyDelegate()
+        } else {
+            MyDelegate2()
+        }
+    }
+
+    var w: String by provider
+
 
 }
 
-operator fun MyDelegate.getValue(thisRef: Any?, property: KProperty<*>): String = this.value
 
-class MyDelegate {
+operator fun MyDelegate.getValue(thisRef: Any, property: KProperty<*>): String = this.value
 
-    var value: String = "YYY"
+open class MyDelegate {
+
+    var value: String = "YYYW"
 
     //todo 代理类里面必须提供 getValue 方法，或者扩展这个方法也可
-    operator fun getValue(thisRef: Any, property: KProperty<*>): String {
+    open operator fun getValue(thisRef: Any, property: KProperty<*>): String {
+        println("thisRef:" + thisRef.hashCode())
+        println("property:" + property.hashCode())
         return value
     }
 
-    operator fun setValue(thisRef: Any, property: KProperty<*>, s: String) {
+    open operator fun setValue(thisRef: Any, property: KProperty<*>, s: String) {
         value = s
     }
+}
+
+class MyDelegate2 : MyDelegate(), ReadWriteProperty<Any, String> {
+
+    var value2: String = "WWW"
+
+    /**
+     * Returns the value of the property for the given object.
+     * @param thisRef the object for which the value is requested.
+     * @param property the metadata for the property.
+     * @return the property value.
+     */
+    override fun getValue(thisRef: Any, property: KProperty<*>): String {
+        return value2
+    }
+
+    /**
+     * Sets the value of the property for the given object.
+     * @param thisRef the object for which the value is requested.
+     * @param property the metadata for the property.
+     * @param value the value to set.
+     */
+    override fun setValue(thisRef: Any, property: KProperty<*>, value: String) {
+        this.value2 = value
+    }
+
+
 }
 
 

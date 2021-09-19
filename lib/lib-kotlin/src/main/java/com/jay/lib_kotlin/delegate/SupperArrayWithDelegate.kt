@@ -11,19 +11,15 @@ class SupperArrayWithDelegate<E>(
     private val list: MutableList<E?> = mutableListOf(),
     private val map: MutableMap<String, E> = mutableMapOf()
 ) : MutableList<E?> by list, MutableMap<String, E> by map {
-
+    // 两个接口中都有，编译器不知道执行哪个，所以这些还得重写
     override fun clear() {
         list.clear()
         map.clear()
     }
-
     override fun isEmpty(): Boolean {
         return list.isEmpty() && map.isEmpty()
     }
-
-    override val size: Int
-        get() = list.size + map.size
-
+    override val size: Int get() = list.size + map.size
     override fun set(index: Int, element: E?): E? {
         if (index <= list.size) {
             repeat(index - list.size - 1) {
@@ -32,7 +28,6 @@ class SupperArrayWithDelegate<E>(
         }
         return list.set(index, element)
     }
-
     override fun toString(): String {
         return "list:$list,map:$map"
     }

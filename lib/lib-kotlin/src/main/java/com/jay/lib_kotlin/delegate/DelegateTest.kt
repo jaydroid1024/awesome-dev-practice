@@ -6,8 +6,9 @@ package com.jay.lib_kotlin.delegate
  * @date 2021/9/2
  */
 fun main() {
-    val apiImpl = ApiImpl()
+    val apiImpl = ApiImpl() //委托方
     //接口委托
+
     val apiWrapperWithDelegate = ApiWrapperWithDelegate(apiImpl)
     apiWrapperWithDelegate.a()
     apiWrapperWithDelegate.b()
@@ -16,15 +17,17 @@ fun main() {
 //ApiImpl-b
 //ApiImpl-c
 
+
+    val apiWrapper = ApiWrapper(apiImpl)
+    apiWrapper.a()
+
+
     val supperArrayWithDelegate = SupperArrayWithDelegate<String>()
     supperArrayWithDelegate["01"] = "a"
     supperArrayWithDelegate.add("b")
     println(supperArrayWithDelegate.toString())
 //list:[b],map:{01=a}
 
-    val person = Person("Jay Droid ")
-    println(person.firstName)
-//Jay
 
     val stateObject = StateObject()
     stateObject.notNullDelegates = 1
@@ -49,6 +52,10 @@ fun main() {
     val fooLazy = FooLazy()
     val fooMyLazy = FooMyLazy()
     println(foo.y)
+    foo.y = "setY"
+    println()
+    println(foo.y)
+    println(foo.w)
     println("foo:${foo.hashCode()}")
     println(fooLazy.z)
     println(fooLazy.z)

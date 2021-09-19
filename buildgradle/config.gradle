@@ -24,7 +24,7 @@ ext {
     //三方依赖库多个依赖路径引入同一个版本号时需要提取版本号
     version = [
             buildGradleVersion = '4.1.1',
-            kotlinVersion = '1.4.10',
+            kotlinVersion = '1.5.30',
             stethoVersion = '1.5.1',
             retrofitVersion = '2.8.1',
             okhttpVersion = '4.5.0',
@@ -82,6 +82,7 @@ ext {
             kotlinStdlibJdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
             //kotlin-stdlib-jdk8
             kotlinStdlibJdk8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
+            kotlinStdlibJdk83 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:3.7.21",
             //anko-sqlite
             ankoSqlite = "org.jetbrains.anko:anko-sqlite:0.10.5",
             //kotlin-reflect

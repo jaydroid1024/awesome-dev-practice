@@ -1,5 +1,7 @@
 package com.jay.lib_kotlin.delegate
 
+import kotlin.concurrent.thread
+
 /**
  * KT中属性代理的实践：lazy
  * lazy 返回一个实现了Lazy接口的代理类，代理的属性都会调用getValue方法，
@@ -11,13 +13,43 @@ package com.jay.lib_kotlin.delegate
  */
 class FooLazy {
     private var index = 0
-    //用到时再去获取，并把结果缓存起来避免重复的运算，提高代码的性能
-    val z: String by lazy {
-        index++
-        "zzz——$index"
+
+//    LazyThreadSafetyMode 有三种模式作用是指定 [Lazy] 实例如何在多个线程之间同步初始化。
+//    SYNCHRONIZED: 锁用于确保只有一个线程可以初始化[Lazy]实例。
+//    PUBLICATION: 并发访问未初始化的[Lazy]实例值时，可以多次调用Initializer函数，但是只有第一个返回的值将用作[Lazy]实例的值。
+//    NONE: 不使用锁来同步对 [Lazy] 实例值的访问；如果从多个线程访问该实例，可能会发生线程安全问题。除非保证 [Lazy] 实例永远不会从多个线程初始化，否则不应使用此模式。
+
+
+    val a by MyDelegate()
+    val b by myLazy { "bbb——${index++}" }
+    val x: String by lazy{ "xxx——${index++}" } //LazyThreadSafetyMode默认 SYNCHRONIZED
+
+    val y: String by lazy(LazyThreadSafetyMode.PUBLICATION) {
+        println("yyy——lazy")
+        "yyy——${index++}"
+    }
+
+    val z: String by lazy(LazyThreadSafetyMode.NONE) {
+        println("zzz——lazy")
+        "zzz——${index++}"
     }
 
 }
+
+fun main() {
+    val fooLazy = FooLazy()
+    for (i in 1..100) {
+        val thread = thread(true) {
+            Thread.sleep(100)
+            println(Thread.currentThread().name)
+            println("=" + fooLazy.x)
+            println("====" + fooLazy.y)
+            println("=========" + fooLazy.z)
+        }
+    }
+
+}
+
 
 //public final class FooLazy {
 //   @NotNull

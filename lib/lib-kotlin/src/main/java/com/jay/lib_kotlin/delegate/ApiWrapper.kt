@@ -6,7 +6,6 @@ package com.jay.lib_kotlin.delegate
  * @date 2021/9/2
  */
 class ApiWrapper(private val api: Api) : Api {
-
     override fun a() {
         println("ApiWrapper-a")
         api.a()
@@ -21,5 +20,16 @@ class ApiWrapper(private val api: Api) : Api {
         println("ApiWrapper-c")
         api.b()
     }
-
 }
+
+fun main() {
+    val apiImpl = ApiImpl() //委托方
+    val apiWrapper = ApiWrapper(apiImpl)
+    apiWrapper.a()
+    apiWrapper.getValue("aaa")
+}
+
+//   public static final String getValue(@NotNull ApiWrapper $this$getValue, @NotNull String thisRef) {
+fun ApiWrapper.getValue(thisRef: String) = "扩展方法"
+
+

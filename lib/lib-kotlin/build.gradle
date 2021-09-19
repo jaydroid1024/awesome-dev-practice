@@ -1,14 +1,11 @@
 apply from: "../../buildgradle/java.gradle"
 
-dependencies {
-
-    implementation rootProject.ext.gson
-}
 
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rootProject.ext.kotlinStdlibJdk8
+    implementation rootProject.ext.kotlinReflect
     implementation rootProject.ext.gson
 
 }
