@@ -2,6 +2,14 @@ apply from: "../../buildgradle/biz.gradle"
 apply plugin: 'kotlin-android'
 
 
+android {
+    defaultConfig {
+        ndk {
+            moduleName "NDKTools-jni"
+            abiFilters "armeabi", "armeabi-v7a"
+        }
+    }
+}
 dependencies {
 
     implementation project(path: ':base:base-dev')
@@ -9,4 +17,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation rootProject.ext.recyclerAdapterHelper
+    implementation 'com.google.android.material:material:1.4.0'
 }

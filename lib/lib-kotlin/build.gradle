@@ -1,12 +1,20 @@
 apply from: "../../buildgradle/java.gradle"
 
 
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rootProject.ext.kotlinStdlibJdk8
     implementation rootProject.ext.kotlinReflect
     implementation rootProject.ext.gson
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+    implementation 'com.bennyhuo.java:portable-android-handler:0.2'
+    implementation "io.reactivex.rxjava2:rxjava:2.2.16"
+    compileOnly 'com.google.android:android:4.1.1.4'
+
+
 
 }
 

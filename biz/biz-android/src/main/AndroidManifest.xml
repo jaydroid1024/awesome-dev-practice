@@ -3,9 +3,23 @@
     package="com.jay.biz_android">
 
     <application>
-        <activity android:name=".touch_event.TouchEventDispatchActivity"></activity>
+        <activity
+            android:name=".memory.oom.OomMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".memory.memory_shake.MemorySharkActivity"
+            android:exported="true" />
+        <activity
+            android:name=".memory.MemoryMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".handler.jni.JNITestActivity"
+            android:exported="true" />
+        <activity android:name=".touch_event.TouchEventDispatchActivity" />
         <activity android:name=".touch_event.TouchEventMainActivity" />
         <activity android:name=".AndroidMainActivity" />
+        <activity android:name=".handler.HandlerMainActivity" />
+        <activity android:name=".memory.yearclass.YearClassTestActivity" />
     </application>
 
 </manifest>

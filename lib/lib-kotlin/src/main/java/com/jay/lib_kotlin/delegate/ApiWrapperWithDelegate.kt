@@ -17,6 +17,9 @@ class ApiWrapperWithDelegate(private val api: Api) : Api by api {
 }
 
 
+
+
+
 fun main() {
     val apiImpl = ApiImpl() //委托方
     //接口委托

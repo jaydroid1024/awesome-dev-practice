@@ -5,6 +5,7 @@
 //include ':app:app-jetpack'
 rootProject.name = 'awesome-dev-practice'
 
+
 /**
  * 有关组件化的一些信息请参考此项目：
  * [WanDroid组件化](https://github.com/Jay-Droid/WanDroid)
@@ -13,12 +14,12 @@ rootProject.name = 'awesome-dev-practice'
 //include ':app:app-map'
 
 //include ':app:dev'
-include ':app:app-template'
+//include ':app:app-template'
 
 //include ':app:app-kotlin',
 ////        ':app:app-detail',
 ////        ':app:app-english',
-//        ':app:app-android',
+
 ////        ':app:app-dev',
 ////        ':app:app-movie',
 ////        ':app:app-card',
@@ -27,7 +28,7 @@ include ':app:app-template'
 
 //include ':biz:biz-kotlin',
 //        ':biz:biz-detail',
-//        ':biz:biz-android',
+
 //        ':biz:biz-movie',
 //        ':biz:biz-map',
 //        ':biz:biz-card',
@@ -37,8 +38,8 @@ include ':app:app-template'
 
 include ':base:base-common',
         ':base:base-dev',
-        ':base:base-web',
-        ':base:base-speech'
+        ':base:base-web'
+//        ':base:base-speech'
 
 
 include ':lib:lib-common',
@@ -46,8 +47,8 @@ include ':lib:lib-common',
         ':lib:lib-app',
 //        ':lib:lib-cpu-helper',
 //        ':lib:lib-pattern',
-        ':lib:lib-xunfei-msc-jar',
-        ':lib:lib-xunfei',
+//        ':lib:lib-xunfei-msc-jar',
+//        ':lib:lib-xunfei',
         ':lib:lib-java'
 
 
@@ -56,7 +57,11 @@ include ':lib:lib-common',
 //        ':biz:biz-algorithm',
 //        ':lib:lib-algorithm'
 
-
+//
 include ':app:app-kotlin',
         ':biz:biz-kotlin',
         ':lib:lib-kotlin'
+
+
+//include ':app:app-android',
+//        ':biz:biz-android'

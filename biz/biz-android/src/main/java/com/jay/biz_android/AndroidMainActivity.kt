@@ -27,6 +27,8 @@ class AndroidMainActivity : AppCompatActivity() {
     private val demoItemData: ArrayList<DemoListEntity>
         get() = arrayListOf(
             DemoListEntity(headerTitle = "Android 基础"),
+            DemoListEntity("Android 内存相关", ARPath.PathAndroid.MEMORY_MAIN_ACTIVITY_PATH),
+            DemoListEntity("Android Handler", ARPath.PathAndroid.HANDLER_MAIN_ACTIVITY_PATH),
             DemoListEntity("Android 事件问题", ARPath.PathAndroid.TOUCH_EVENT_MAIN_ACTIVITY_PATH),
         )
 }

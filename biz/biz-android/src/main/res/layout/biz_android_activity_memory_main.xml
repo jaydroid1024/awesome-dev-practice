@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".memory.MemoryMainActivity">
+
+    <Button
+        android:id="@+id/btn_oom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OOM" />
+
+    <Button
+        android:id="@+id/btn_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试设备分级按照年份" />
+
+    <Button
+        android:id="@+id/btn_shake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试内存抖动" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="增加使用内存" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="内存使用情况"
+        android:textSize="22sp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

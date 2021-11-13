@@ -449,7 +449,8 @@ object ARPath {
         /**
          * 数据绑定页面
          */
-        const val DATA_BINDING_OBSERVABLE_ACTIVITY_PATH = "${GROUP}/jetpack/databinding/observable/activity"
+        const val DATA_BINDING_OBSERVABLE_ACTIVITY_PATH =
+            "${GROUP}/jetpack/databinding/observable/activity"
 
         /**
          * 数据绑定页面
@@ -537,6 +538,16 @@ object ARPath {
          * 组件主页面
          */
         const val TOUCH_EVENT_MAIN_ACTIVITY_PATH = "${GROUP}/android/touch_event/main/activity"
+
+        /**
+         * 组件主页面
+         */
+        const val HANDLER_MAIN_ACTIVITY_PATH = "${GROUP}/android/handler/main/activity"
+
+        /**
+         * 组件主页面
+         */
+        const val MEMORY_MAIN_ACTIVITY_PATH = "${GROUP}/android/memory/main/activity"
 
         /**
          * 组件主页面
